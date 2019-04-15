@@ -18,6 +18,8 @@ from django.urls import path
 from web import views
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name="index"),
+    path('flask/', views.flask, name="flask"),
+    path('render_flask_template/', views.render_flask_template, name="render_flask_template"),
     path('admin/', admin.site.urls),
 ]
