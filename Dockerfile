@@ -9,5 +9,5 @@ RUN pip install -r requirements.txt
 # Expose port                                                              
 EXPOSE 8000
 # Change working directory
-WORKDIR /app/web
+WORKDIR /app/compare_py_web_frameworks
 

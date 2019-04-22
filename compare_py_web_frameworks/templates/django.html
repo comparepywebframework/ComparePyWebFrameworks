@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <form class="form-submit" action="{% url 'render_flask_template' %}" method="post">
+    <form class="form-submit" action="{% url 'render_django_template' %}" method="post">
         {% csrf_token %}
-        <h1 class="title">Flask</h1>
+        <h1 class="title">Django</h1>
         <h3>Rendering template</h3>
         <div class="input-group mb-3">
             <div class="input-group-prepend">

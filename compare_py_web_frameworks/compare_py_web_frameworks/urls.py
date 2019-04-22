@@ -20,6 +20,8 @@ from web import views
 urlpatterns = [
     path('', views.index, name="index"),
     path('flask/', views.flask, name="flask"),
+    path('django/', views.django, name="django"),
     path('render_flask_template/', views.render_flask_template, name="render_flask_template"),
+    path('render_django_template/', views.render_django_template, name="render_django_template"),
     path('admin/', admin.site.urls),
 ]
