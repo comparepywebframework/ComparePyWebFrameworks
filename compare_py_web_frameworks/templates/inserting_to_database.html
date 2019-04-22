@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <form class="form-submit" action="{% url 'inserting_to_database' %}" method="post">
+        {% csrf_token %}
+        <h3>Inserting objects to database</h3>
+        <h4>Sample Object:</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name (CharField)</th>
+                    <th scope="col">City (CharField)</th>
+                    <th scope="col">Street (CharField)</th>
+                    <th scope="col">Street_number (IntegerField)</th>
+                    <th scope="col">Open at (TimeField)</th>
+                    <th scope="col">Close at (TimeField)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Biedronka</td>
+                    <td>Chorzów</td>
+                    <td>3 maja</td>
+                    <td>14</td>
+                    <td>7:00</td>
+                    <td>21:00</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">How many times?</span>
+            </div>
+            <input type="number" min="0" class="form-control" name="times" id="times" placeholder="Enter how many times"
+                required title="Number of times required">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Insert</button>
+    </form>
+    <div class="conatiner">
+        <h3>Django</h3>
+        <h3>Time to get the response: {{ execution_time_django }}</h3>
+    </div>
+</div>
+{% endblock %}

@@ -2,35 +2,23 @@ from django.shortcuts import render, redirect
 import requests
 import json
 import time
+from .helpers import render_django_template, render_flask_template, DJANGO_SERVER_URL, FLASK_SERVER_URL, insert_to_django_database
 
 
 def index(request):
     return render(request, 'index.html')
 
 
-def flask(request):
-    return render(request, 'flask.html')
+def rendering_template(request):
+    if request.method == 'POST':
+        execution_time_django = render_django_template(request)
+        execution_time_flask = render_flask_template(request)
+        return render(request, 'rendering_template.html', {'execution_time_django': execution_time_django, 'execution_time_flask': execution_time_flask})
+    return render(request, 'rendering_template.html')
 
 
-def render_flask_template(request):
-    start = time.time()
-    r = requests.post('http://0.0.0.0:5000',
-                      json={"times": int(request.POST['times']), "text": request.POST['text']})
-    rendered_template = r.text
-    end = time.time()
-    execution_time = end - start
-    return render(request, 'flask.html', {'execution_time': execution_time, 'rendered_template': rendered_template})
-
-
-def django(request):
-    return render(request, 'django.html')
-
-
-def render_django_template(request):
-    start = time.time()
-    r = requests.post('http://0.0.0.0:8001',
-                      json={"times": int(request.POST['times']), "text": request.POST['text']})
-    rendered_template = r.text
-    end = time.time()
-    execution_time = end - start
-    return render(request, 'django.html', {'execution_time': execution_time, 'rendered_template': rendered_template})
+def inserting_to_database(request):
+    if request.method == 'POST':
+        execution_time_django = insert_to_django_database(request)
+        return render(request, 'inserting_to_database.html', {'execution_time_django': execution_time_django})
+    return render(request, 'inserting_to_database.html')

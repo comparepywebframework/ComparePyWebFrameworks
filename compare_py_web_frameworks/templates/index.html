@@ -3,7 +3,8 @@
 <div class="container">
     <div class="card-deck">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            {% load static %}
+            <img class="card-img-top" src="{% static 'images/flask_logo.png'%}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Flask</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -12,7 +13,7 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            <img class="card-img-top" src="{% static 'images/django_logo.png'%}" style="background: black;" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Django</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -21,7 +22,7 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            <img class="card-img-top" src="{% static 'images/pyramid_logo.png'%}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Pyramid</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
