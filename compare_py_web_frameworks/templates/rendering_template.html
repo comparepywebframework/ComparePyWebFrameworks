@@ -4,12 +4,18 @@
     <form class="form-submit" action="{% url 'rendering_template' %}" method="post">
         {% csrf_token %}
         <h3>Rendering template</h3>
+        <p>Rendering same paragraph specified number of times</p>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">How many times?</span>
             </div>
-            <input type="number" min="0" class="form-control" name="times" id="times" placeholder="Enter how many times"
-                required title="Number of times required">
+            <select class="custom-select" name="times" id="times">
+                <option value="100">100</option>
+                <option value="1000">1000</option>
+                <option value="10000">10000</option>
+                <option value="100000">100000</option>
+                <option value="1000000">1000000</option>
+              </select>
         </div>
         <div class="input-group mb-3">
             <div class="input-group">
@@ -22,9 +28,11 @@
     </form>
     <div class="conatiner">
         <h2>Flask</h2>
-        <h3>Time to get the response: {{ execution_time_flask }}</h3>
+        <p>Time to get the response: {{ execution_time_flask }}</p>
         <h2>Django</h2>
-        <h3>Time to get the response: {{ execution_time_django }}</h3>
+        <p>Time to get the response: {{ execution_time_django }}</p>
+        <h2>Pyramid</h2>
+        <p>Time to get the response: {{ execution_time_pyramid }}</p>
     </div>
     {% if rendered_template %}
     <div class="container">
