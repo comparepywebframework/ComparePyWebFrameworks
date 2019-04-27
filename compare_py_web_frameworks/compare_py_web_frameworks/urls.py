@@ -20,6 +20,8 @@ from web import views
 urlpatterns = [
     path('', views.index, name="index"),
     path('rendering_template/', views.rendering_template, name="rendering_template"),
+    path('record_rendering_template/', views.record_rendering_template, name="record_rendering_template"),
     path('insertinng_to_database/', views.inserting_to_database, name="inserting_to_database"),
+    path('record_inserting_to_database/', views.record_inserting_to_database, name="record_inserting_to_database"),
     path('admin/', admin.site.urls),
 ]

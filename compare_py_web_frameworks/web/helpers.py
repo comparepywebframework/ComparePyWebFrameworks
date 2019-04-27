@@ -6,79 +6,40 @@ FLASK_SERVER_URL = "http://0.0.0.0:5000"
 PYRAMID_SERVER_URL = "http://0.0.0.0:6543"
 
 
-def render_django_template(request):
+def get_server_url(framework):
+    if framework == "django":
+        return DJANGO_SERVER_URL
+    elif framework == "flask":
+        return FLASK_SERVER_URL
+    else:
+        return PYRAMID_SERVER_URL
+
+
+def measure_template_rendering(request, framework):
+    server_url = get_server_url(framework)
     start = time.time()
     try:
         r = requests.post(
-            DJANGO_SERVER_URL,
+            server_url,
             json={"times": int(request.POST["times"]), "text": request.POST["text"]},
         )
     except Exception:
-        return "Connection error"
+        return "Connection Error"
     end = time.time()
     return end - start
 
 
-def render_flask_template(request):
+def measure_inserting_to_database(request, framework):
+    server_url = get_server_url(framework)
     start = time.time()
     try:
         r = requests.post(
-            FLASK_SERVER_URL,
-            json={"times": int(request.POST["times"]), "text": request.POST["text"]},
+            f"{server_url}/add_shop", json={"times": int(request.POST["times"])}
         )
+        if r.status_code == 201:
+            end = time.time()
+            r = requests.post(f"{server_url}/clear_shops_table")
     except Exception:
-        return "Connection error"
-    end = time.time()
-    return end - start
+        return "Connection Error"
+    return round(end - start, 4)
 
-
-def render_pyramid_template(request):
-    start = time.time()
-    try:
-        r = requests.post(
-            PYRAMID_SERVER_URL,
-            json={"times": int(request.POST["times"]), "text": request.POST["text"]},
-        )
-    except Exception:
-        return "Connection error"
-    end = time.time()
-    return end - start
-
-
-def insert_to_django_database(request):
-    start = time.time()
-    r = requests.post(
-        f"{DJANGO_SERVER_URL}/add_shop", json={"times": int(request.POST["times"])}
-    )
-    if r.status_code == 201:
-        end = time.time()
-        r = requests.post(f"{DJANGO_SERVER_URL}/clear_shops_table")
-    else:
-        return "Error"
-    return end - start
-
-
-def insert_to_flask_database(request):
-    start = time.time()
-    r = requests.post(
-        f"{FLASK_SERVER_URL}/add_shop", json={"times": int(request.POST["times"])}
-    )
-    if r.status_code == 201:
-        end = time.time()
-        r = requests.post(f"{FLASK_SERVER_URL}/clear_shops_table")
-    else:
-        return "Error"
-    return end - start
-
-
-def insert_to_pyramid_database(request):
-    start = time.time()
-    r = requests.post(
-        f"{PYRAMID_SERVER_URL}/add_shop", json={"times": int(request.POST["times"])}
-    )
-    if r.status_code == 201:
-        end = time.time()
-        r = requests.post(f"{PYRAMID_SERVER_URL}/clear_shops_table")
-    else:
-        return "Error"
-    return end - start

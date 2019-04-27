@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <form class="form-submit" action="{% url 'rendering_template' %}" method="post">
+    <form class="form-submit" action="{% url 'record_rendering_template' %}" method="post">
         {% csrf_token %}
-        <h3>Rendering template</h3>
+        <h3>Rendering HTML template</h3>
         <p>Rendering same paragraph specified number of times</p>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -13,34 +13,57 @@
                 <option value="100">100</option>
                 <option value="1000">1000</option>
                 <option value="10000">10000</option>
-                <option value="100000">100000</option>
-                <option value="1000000">1000000</option>
-              </select>
+            </select>
         </div>
         <div class="input-group mb-3">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Your text</span>
+                    <span class="input-group-text">Basic Text</span>
                 </div>
-                <textarea class="form-control" name="text" id="text" aria-label="With textarea"></textarea>
+                <textarea class="form-control" name="text" id="text"
+                    aria-label="With textarea">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, magna ac placerat dapibus, dui enim egestas erat, eu lacinia quam nisi ut lectus. Phasellus vitae risus et nisi rhoncus pellentesque vitae at odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce placerat quam vel orci ultricies consectetur. Donec non ligula erat. Donec luctus eros sed eros lobortis consectetur. Aliquam at lectus mi. Suspendisse interdum, nulla sed tempor dignissim, metus leo rutrum elit, eget hendrerit magna ligula vel lectus. Donec ac tincidunt tortor. In finibus velit eu pretium tempor. Vestibulum faucibus eu velit in dictum. Morbi pulvinar tortor sit amet ante sollicitudin sagittis.</textarea>
                 <button type="submit" class="btn btn-primary btn-lg">Render</button>
             </div>
     </form>
-    <div class="conatiner">
-        <h2>Flask</h2>
-        <p>Time to get the response: {{ execution_time_flask }}</p>
-        <h2>Django</h2>
-        <p>Time to get the response: {{ execution_time_django }}</p>
-        <h2>Pyramid</h2>
-        <p>Time to get the response: {{ execution_time_pyramid }}</p>
-    </div>
-    {% if rendered_template %}
-    <div class="container">
-        <h3>Rendered template:</h3>
-        <p>
-            {{ rendered_template }}
-        </p>
-    </div>
-    {% endif %}
 </div>
+
+<div class="container">
+    <h3>100 elements - Average Template Rendering Time</h3>
+    <h5>Total measurements: {{ number_of_records_100 }}</h5>
+    <iframe
+        src="http://localhost:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&from=1556283324387&to=1556304924387&theme=light&panelId=4"
+        width="250" height="250" frameborder="0"></iframe>
+    <iframe
+        src="http://localhost:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&from=1556283141960&to=1556304741960&theme=light&panelId=2"
+        width="250" height="250" frameborder="0"></iframe>
+    <iframe
+        src="http://localhost:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&from=1556283020704&to=1556304620704&theme=light&panelId=8"
+        width="250" height="250" frameborder="0"></iframe>
+</div>
+
+<div class="container">
+    <h3>1000 elements - Average Template Rendering Time</h3>
+    <h5>Total measurements: {{ number_of_records_1000 }}</h5>
+    <iframe
+        src="http://localhost:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&from=1556283873921&to=1556305473922&theme=light&panelId=16"
+        width="250" height="250" frameborder="0"></iframe>
+    <iframe
+        src="http://localhost:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&from=1556283909845&to=1556305509845&theme=light&panelId=14"
+        width="250" height="250" frameborder="0"></iframe>
+    <iframe
+        src="http://localhost:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&from=1556283934287&to=1556305534287&theme=light&panelId=18"
+        width="250" height="250" frameborder="0"></iframe>
+</div>
+<div class="container">
+    <h3>10000 elements - Average Template Rendering Time</h3>
+    <h5>Total measurements: {{ number_of_records_10000 }}</h5>
+    <iframe src="http://localhost:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=24"
+        width="250" height="250" frameborder="0"></iframe>
+    <iframe src="http://localhost:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=22"
+        width="250" height="250" frameborder="0"></iframe>
+    <iframe src="http://localhost:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=26"
+        width="250" height="250" frameborder="0"></iframe>
+</div>
+
+
 {% endblock %}

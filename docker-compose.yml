@@ -27,3 +27,5 @@ services:
       - "3000:3000"
     links:
       - mysql
+    volumes: 
+      - ~/Documents/Projekty/PyFrameworks/grafana:/var/lib/grafana
