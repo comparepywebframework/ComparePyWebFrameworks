@@ -35,4 +35,3 @@ def get_all_inserted_measurements_number(number_of_records):
     return InsertingToDatabaseMeasurement.objects.filter(
         number_of_inserted=number_of_records, framework="django"
     ).count()
-
