@@ -1,4 +1,8 @@
-from .models import RenderingTemplateMeasurement, InsertingToDatabaseMeasurement
+from .models import (
+    RenderingTemplateMeasurement,
+    InsertingToDatabaseMeasurement,
+    ExternalApiCallMeasurement,
+)
 
 
 def record_rendering_template_time(execution_time, framework, number_of_rendered):
@@ -25,6 +29,16 @@ def record_inserting_to_database_time(execution_time, framework, number_of_inser
     return True
 
 
+def record_external_api_call_time(execution_time, framework):
+    try:
+        ExternalApiCallMeasurement.objects.create(
+            execution_time=execution_time, framework=framework
+        )
+    except Exception:
+        return False
+    return True
+
+
 def get_all_rendered_measurements_number(number_of_rendered):
     return RenderingTemplateMeasurement.objects.filter(
         number_of_rendered=number_of_rendered, framework="django"
@@ -35,3 +49,8 @@ def get_all_inserted_measurements_number(number_of_records):
     return InsertingToDatabaseMeasurement.objects.filter(
         number_of_inserted=number_of_records, framework="django"
     ).count()
+
+
+def get_all_external_api_call_measurements_number():
+    return ExternalApiCallMeasurement.objects.filter(framework="django").count()
+

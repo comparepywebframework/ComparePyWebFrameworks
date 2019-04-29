@@ -3,12 +3,17 @@ import requests
 import json
 import time
 from django.views.decorators.http import require_POST
-from .helpers import measure_template_rendering, measure_inserting_to_database
+from .helpers import (
+    measure_template_rendering,
+    measure_inserting_to_database,
+    measure_external_api_call,
+)
 from .measurements import (
     record_rendering_template_time,
     record_inserting_to_database_time,
     get_all_rendered_measurements_number,
     get_all_inserted_measurements_number,
+    get_all_external_api_call_measurements_number,
 )
 
 
@@ -61,9 +66,7 @@ def record_rendering_template(request):
 def inserting_to_database(request):
     number_of_records_10 = get_all_inserted_measurements_number(number_of_records=10)
     number_of_records_50 = get_all_inserted_measurements_number(number_of_records=50)
-    number_of_records_100 = get_all_inserted_measurements_number(
-        number_of_records=100
-    )
+    number_of_records_100 = get_all_inserted_measurements_number(number_of_records=100)
     return render(
         request,
         "inserting_to_database.html",
@@ -96,4 +99,19 @@ def record_inserting_to_database(request):
         number_of_inserted=request.POST["times"],
     )
     return redirect("inserting_to_database")
+
+
+def external_api_call(request):
+    total_measurements = get_all_external_api_call_measurements_number()
+    return render(
+        request, "external_api_call.html", {"total_measurements": total_measurements}
+    )
+
+
+@require_POST
+def record_external_api_call(request):
+    measure_external_api_call("flask")
+    measure_external_api_call("django")
+    measure_external_api_call("pyramid")
+    return redirect("external_api_call")
 

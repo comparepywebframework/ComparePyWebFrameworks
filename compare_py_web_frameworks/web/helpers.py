@@ -1,5 +1,6 @@
 import time
 import requests
+from .measurements import record_external_api_call_time
 
 DJANGO_SERVER_URL = "http://0.0.0.0:8001"
 FLASK_SERVER_URL = "http://0.0.0.0:5000"
@@ -41,5 +42,19 @@ def measure_inserting_to_database(request, framework):
             r = requests.post(f"{server_url}/clear_shops_table")
     except Exception:
         return "Connection Error"
-    return round(end - start, 4)
+    return end - start
 
+
+def measure_external_api_call(framework):
+    server_url = get_server_url(framework)
+    start = time.time()
+    try:
+        r = requests.get(f"{server_url}/external_api_call")
+        if r.status_code == 200:
+            end = time.time()
+            total_time = end - start
+            record_external_api_call_time(
+                execution_time=total_time, framework=framework
+            )
+    except Exception:
+        return "Connection Error"

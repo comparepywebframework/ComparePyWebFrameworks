@@ -23,5 +23,7 @@ urlpatterns = [
     path('record_rendering_template/', views.record_rendering_template, name="record_rendering_template"),
     path('insertinng_to_database/', views.inserting_to_database, name="inserting_to_database"),
     path('record_inserting_to_database/', views.record_inserting_to_database, name="record_inserting_to_database"),
+    path('external_api_call/', views.external_api_call, name="external_api_call"),
+    path('record_external_api_call/', views.record_external_api_call, name="record_external_api_call"),
     path('admin/', admin.site.urls),
 ]
