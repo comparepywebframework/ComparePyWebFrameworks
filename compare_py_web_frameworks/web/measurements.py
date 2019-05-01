@@ -2,6 +2,7 @@ from .models import (
     RenderingTemplateMeasurement,
     InsertingToDatabaseMeasurement,
     ExternalApiCallMeasurement,
+    JSONSerializationMeasurement,
 )
 
 
@@ -39,6 +40,15 @@ def record_external_api_call_time(execution_time, framework):
     return True
 
 
+def record_json_serialization_time(execution_time, framework):
+    try:
+        JSONSerializationMeasurement.objects.create(execution_time=execution_time, framework=framework)
+    except Exception:
+        return False
+    return True
+
+
+
 def get_all_rendered_measurements_number(number_of_rendered):
     return RenderingTemplateMeasurement.objects.filter(
         number_of_rendered=number_of_rendered, framework="django"
@@ -54,3 +64,6 @@ def get_all_inserted_measurements_number(number_of_records):
 def get_all_external_api_call_measurements_number():
     return ExternalApiCallMeasurement.objects.filter(framework="django").count()
 
+
+def get_all_json_serialization_measurements_number():
+    return JSONSerializationMeasurement.objects.filter(framework="django").count()

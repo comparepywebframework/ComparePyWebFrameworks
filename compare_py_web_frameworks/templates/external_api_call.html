@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
+{% load i18n %}
 <div class="container">
     <form class="form-submit" action="{% url 'record_external_api_call' %}" method="post">
         {% csrf_token %}
-        <h2>External API Call</h2>
-        <p>Make request to external API (https://openweathermap.org) to get weather forecast for Katowice and return
-            response</p>
+        <h2>{% trans "External API Call" %}</h2>
+        <p>{% trans "Make request to external API (https://openweathermap.org) to get weather forecast for Katowice and return response" %}</p>
         </p>
         <div class="input-group mb-3">
-            <button type="submit" class="btn btn-primary">Make Request</button>
+            <button type="submit" class="btn btn-primary">{% trans "Make Request" %}</button>
         </div>
     </form>
 </div>

@@ -1,8 +1,9 @@
+{% load i18n %}
 <div class="container">
-    <h3>Average Time:</h3>
+    <h3>{% trans "Average Time:" %}</h3>
     <div class="container">
-        <h4><span class="badge badge-primary">100 elements</span></h4>
-        <p>Total measurements: <span class="badge badge-secondary">{{ number_of_records_100 }}</span></p>
+        <h4><span class="badge badge-primary">{% trans "100 elements" %}</span></h4>
+        <p>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ number_of_records_100 }}</span></p>
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>
@@ -32,8 +33,8 @@
         </div>
     </div>
     <div class="container">
-        <h4><span class="badge badge-primary">1000 elements</span></h4>
-        <p>Total measurements: <span class="badge badge-secondary">{{ number_of_records_1000 }}</span></h>
+        <h4><span class="badge badge-primary">{% trans "1000 elements" %}</span></h4>
+        <p>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ number_of_records_1000 }}</span></h>
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>
@@ -63,8 +64,8 @@
         </div>
     </div>
     <div class="container">
-        <h4><span class="badge badge-primary">10000 elements</span></h4>
-        <p>Total measurements: <span class="badge badge-secondary">{{ number_of_records_10000 }}</span></p>
+        <h4><span class="badge badge-primary">{% trans "10000 elements" %}</span></h4>
+        <p>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ number_of_records_10000 }}</span></p>
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>

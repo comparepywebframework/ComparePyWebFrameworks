@@ -1,6 +1,7 @@
 import time
 import requests
-from .measurements import record_external_api_call_time
+from .measurements import record_external_api_call_time, record_json_serialization_time
+from .measurement_helpers import measure_execution_time
 
 DJANGO_SERVER_URL = "http://0.0.0.0:8001"
 FLASK_SERVER_URL = "http://0.0.0.0:5000"
@@ -38,10 +39,10 @@ def measure_inserting_to_database(request, framework):
             f"{server_url}/add_shop", json={"times": int(request.POST["times"])}
         )
         if r.status_code == 201:
-            end = time.time()
             r = requests.post(f"{server_url}/clear_shops_table")
     except Exception:
         return "Connection Error"
+    end = time.time()
     return end - start
 
 
@@ -58,3 +59,15 @@ def measure_external_api_call(framework):
             )
     except Exception:
         return "Connection Error"
+
+
+@measure_execution_time
+def measure_json_serialization(framework):
+    server_url = get_server_url(framework)
+    try:
+        r = requests.get(f"{server_url}/serialize_json")
+        if r.status_code == 200:
+           return
+    except Exception:
+        return "Connection Error"
+

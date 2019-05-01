@@ -1,7 +1,8 @@
+{% load i18n %}
 <div class="container">
-    <h3>Average Time:</h3>
+    <h3>{% trans "Average Time:" %}</h3>
     <div class="container">
-        <p>Total measurements: <span class="badge badge-secondary">{{ total_measurements }}</span></p>
+        <p>{% trans "Total measurements:" %} <span class="badge badge-secondary">{{ total_measurements }}</span></p>
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>

@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
+{% load i18n %}
 <div class="container">
     <form class="form-submit" action="{% url 'record_rendering_template' %}" method="post">
         {% csrf_token %}
-        <h2>Rendering HTML template</h2>
-        <p>Rendering same paragraph specified number of times</p>
+        <h2>{% trans "Rendering HTML template" %}</h2>
+        <p>{% trans "Rendering same paragraph specified number of times" %}</p>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">How many times?</span>
+                <span class="input-group-text">{% trans "How many times?" %}</span>
             </div>
             <select class="custom-select" name="times" id="times">
                 <option value="100">100</option>
@@ -18,11 +19,11 @@
         <div class="input-group mb-3">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Basic Text</span>
+                    <span class="input-group-text">{% trans "Basic Text" %}</span>
                 </div>
                 <textarea class="form-control" name="text" id="text"
                     aria-label="With textarea">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus, magna ac placerat dapibus, dui enim egestas erat, eu lacinia quam nisi ut lectus. Phasellus vitae risus et nisi rhoncus pellentesque vitae at odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce placerat quam vel orci ultricies consectetur. Donec non ligula erat. Donec luctus eros sed eros lobortis consectetur. Aliquam at lectus mi. Suspendisse interdum, nulla sed tempor dignissim, metus leo rutrum elit, eget hendrerit magna ligula vel lectus. Donec ac tincidunt tortor. In finibus velit eu pretium tempor. Vestibulum faucibus eu velit in dictum. Morbi pulvinar tortor sit amet ante sollicitudin sagittis.</textarea>
-                <button type="submit" class="btn btn-primary">Render</button>
+                <button type="submit" class="btn btn-primary">{% trans "Render" %}</button>
             </div>
         </div>
     </form>

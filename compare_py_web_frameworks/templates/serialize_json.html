@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% load i18n %}
+<div class="container">
+    <form class="form-submit" action="{% url 'record_json_serialization' %}" method="post">
+        {% csrf_token %}
+        <h2>{% trans "Serialize JSON" %}</h2>
+        <p>{% trans "Serialize sample JSON object and return as response" %}</p>
+        </p>
+        <div class="input-group mb-3">
+            <button type="submit" class="btn btn-primary">{% trans "Serialize JSON" %}</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

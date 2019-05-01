@@ -7,10 +7,12 @@ from .helpers import (
     measure_template_rendering,
     measure_inserting_to_database,
     measure_external_api_call,
+    measure_json_serialization
 )
 from .measurements import (
     record_rendering_template_time,
     record_inserting_to_database_time,
+    record_json_serialization_time,
     get_all_rendered_measurements_number,
     get_all_inserted_measurements_number,
     get_all_external_api_call_measurements_number,
@@ -115,3 +117,13 @@ def record_external_api_call(request):
     measure_external_api_call("pyramid")
     return redirect("external_api_call")
 
+
+def serialize_json(request):
+    return render(request, "serialize_json.html")
+
+
+@require_POST
+def record_json_serialization(request):
+    execution_time = measure_json_serialization("django")
+    record_json_serialization_time(execution_time, "django")
+    return redirect('serialize_json')

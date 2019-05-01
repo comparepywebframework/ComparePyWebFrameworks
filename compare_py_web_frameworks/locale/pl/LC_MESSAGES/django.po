@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-01 16:18+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#: templates/base.html:20
+msgid "ComparePyWebFrameworks"
+msgstr "PorównajWebFrameworkiPythona"
+
+#: templates/base.html:28
+msgid "Rendering Template"
+msgstr "Renderowanie szablonu"
+
+#: templates/base.html:29
+msgid "Inserting to database"
+msgstr "Wprowadzanie danych do bazy danych"
+
+#: templates/base.html:30 templates/external_api_call.html:7
+msgid "External API Call"
+msgstr "Wywołanie zewnętrznego API"
+
+#: templates/database_measurements_stats.html:3
+#: templates/external_api_call_measurements_stats.html:3
+#: templates/rendering_template_measurements_stats.html:3
+msgid "Average Time:"
+msgstr "Średni czas"
+
+#: templates/database_measurements_stats.html:5
+msgid "10 Records"
+msgstr "10 rekordów"
+
+#: templates/database_measurements_stats.html:6
+#: templates/database_measurements_stats.html:37
+#: templates/database_measurements_stats.html:67
+#: templates/external_api_call_measurements_stats.html:5
+#: templates/rendering_template_measurements_stats.html:6
+#: templates/rendering_template_measurements_stats.html:37
+#: templates/rendering_template_measurements_stats.html:68
+msgid "Total measurements:"
+msgstr "Całkowita liczba pomiarów:"
+
+#: templates/database_measurements_stats.html:36
+msgid "50 Records"
+msgstr "50 Rekordów"
+
+#: templates/database_measurements_stats.html:66
+msgid "100 Records"
+msgstr "100 Rekordów"
+
+#: templates/external_api_call.html:8
+msgid ""
+"Make request to external API (https://openweathermap.org) to get weather "
+"forecast for Katowice and return response"
+msgstr "Wyślij żądanie do zewnętrznego API (https://openweathermap.org) w celu pobrania prognozy pogody dla Katowic i zwróć jako odpowiedź"
+
+#: templates/external_api_call.html:11
+msgid "Make Request"
+msgstr "Wyślij żądanie"
+
+#: templates/inserting_to_database.html:7
+msgid "Inserting objects to database"
+msgstr "Wprowadzanie obiektów do bazy danych"
+
+#: templates/inserting_to_database.html:8
+msgid "Sample Object:"
+msgstr "Przykładowy obiekt"
+
+#: templates/inserting_to_database.html:35 templates/rendering_template.html:11
+msgid "How many times?"
+msgstr "Ile razy?"
+
+#: templates/inserting_to_database.html:42
+msgid "Insert"
+msgstr "Wprowadź"
+
+#: templates/rendering_template.html:7
+msgid "Rendering HTML template"
+msgstr "Renderowanie szablonu HTML"
+
+#: templates/rendering_template.html:8
+msgid "Rendering same paragraph specified number of times"
+msgstr "Renderowanie tego samego paragrafu wybraną liczbę razy"
+
+#: templates/rendering_template.html:22
+msgid "Basic Text"
+msgstr "Przykładowy tekst"
+
+#: templates/rendering_template.html:26
+msgid "Render"
+msgstr "Renderuj"
+
+#: templates/rendering_template_measurements_stats.html:5
+msgid "100 elements"
+msgstr "100 elementów"
+
+#: templates/rendering_template_measurements_stats.html:36
+msgid "1000 elements"
+msgstr "1000 elementów"
+
+#: templates/rendering_template_measurements_stats.html:67
+msgid "10000 elements"
+msgstr "10000 elementów"

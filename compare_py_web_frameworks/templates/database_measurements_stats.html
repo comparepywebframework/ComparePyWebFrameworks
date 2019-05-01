@@ -1,14 +1,15 @@
+{% load i18n %}
 <div class="container">
-    <h3>Average Time:</h3>
+    <h3>{% trans "Average Time:" %}</h3>
     <div class="container">
-        <h4><span class="badge badge-primary">10 Records</span></h4>
-        <p>Total measurements: <span class="badge badge-secondary">{{ number_of_records_10 }}</span></p>
+        <h4><span class="badge badge-primary">{% trans "10 Records" %}</span></h4>
+        <p>{% trans "Total measurements:" %} <span class="badge badge-secondary">{{ number_of_records_10 }}</span></p>
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>
                 <div class="card-body">
                     <iframe
-                        src="http://localhost:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=4"
+                        src="http://192.168.1.186:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=4"
                         width="250" height="270" frameborder="0"></iframe>
                 </div>
             </div>
@@ -32,8 +33,8 @@
         </div>
     </div>
     <div class="container">
-        <h4><span class="badge badge-primary">50 Records</span></h4>
-        <p>Total measurements: <span class="badge badge-secondary">{{ number_of_records_50 }}</span></p>
+        <h4><span class="badge badge-primary">{% trans "50 Records" %}</span></h4>
+        <p>{% trans "Total measurements:" %} <span class="badge badge-secondary">{{ number_of_records_50 }}</span></p>
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>
@@ -62,8 +63,8 @@
         </div>
     </div>
     <div class="container">
-        <h4><span class="badge badge-primary">100 Records</span></h4>
-        <p>Total measurements: <span class="badge badge-secondary">{{ number_of_records_100 }}</span></p>
+        <h4><span class="badge badge-primary">{% trans "100 Records" %}</span></h4>
+        <p>{% trans "Total measurements:" %} <span class="badge badge-secondary">{{ number_of_records_100 }}</span></p>
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>

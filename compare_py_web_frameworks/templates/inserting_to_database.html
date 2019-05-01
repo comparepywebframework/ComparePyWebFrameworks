@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+{% load i18n %}
 <div class="container">
     <form class="form-submit" action="{% url 'record_inserting_to_database' %}" method="post">
         {% csrf_token %}
-        <h2>Inserting objects to database</h2>
-        <p>Sample Object:</p>
+        <h2>{% trans "Inserting objects to database" %}</h2>
+        <p>{% trans "Sample Object:" %}</p>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -31,14 +32,14 @@
         </table>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">How many times?</span>
+                <span class="input-group-text">{% trans "How many times?" %}</span>
             </div>
             <select class="custom-select" name="times" id="times">
                     <option value="10">10</option>
                     <option value="50">50</option>
                     <option value="100">100</option>
             </select>
-            <button type="submit" class="btn btn-primary">Insert</button>
+            <button type="submit" class="btn btn-primary">{% trans "Insert" %}</button>
         </div>
     </form>
 </div>

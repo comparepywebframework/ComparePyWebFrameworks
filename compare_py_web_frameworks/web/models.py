@@ -37,3 +37,16 @@ class ExternalApiCallMeasurement(models.Model):
 
     def __str__(self):
         return f"{self.framework} - {self.execution_time}"
+
+
+class JSONSerializationMeasurement(models.Model):
+
+    class Meta:
+        db_table = "json_serialization_measurement"
+    
+    date = models.DateTimeField(auto_now=True)
+    execution_time = models.FloatField()
+    framework = models.CharField(max_length=20)
+
+    def __str__(self):
+        return f"{self.framework} - {self.execution_time}"
