@@ -17,46 +17,36 @@ def get_server_url(framework):
         return PYRAMID_SERVER_URL
 
 
-def measure_template_rendering(request, framework):
+@measure_execution_time
+def measure_template_rendering(times, text, framework):
     server_url = get_server_url(framework)
-    start = time.time()
     try:
-        r = requests.post(
-            server_url,
-            json={"times": int(request.POST["times"]), "text": request.POST["text"]},
-        )
+        r = requests.post(server_url, json={"times": int(times), "text": text})
+        if r.status_code == 200:
+            return
     except Exception:
         return "Connection Error"
-    end = time.time()
-    return end - start
 
 
-def measure_inserting_to_database(request, framework):
+@measure_execution_time
+def measure_inserting_to_database(times, framework):
     server_url = get_server_url(framework)
-    start = time.time()
     try:
-        r = requests.post(
-            f"{server_url}/add_shop", json={"times": int(request.POST["times"])}
-        )
+        r = requests.post(f"{server_url}/add_shop", json={"times": int(times)})
         if r.status_code == 201:
             r = requests.post(f"{server_url}/clear_shops_table")
     except Exception:
         return "Connection Error"
-    end = time.time()
-    return end - start
 
 
+@measure_execution_time
 def measure_external_api_call(framework):
     server_url = get_server_url(framework)
     start = time.time()
     try:
         r = requests.get(f"{server_url}/external_api_call")
         if r.status_code == 200:
-            end = time.time()
-            total_time = end - start
-            record_external_api_call_time(
-                execution_time=total_time, framework=framework
-            )
+            return
     except Exception:
         return "Connection Error"
 
@@ -67,7 +57,7 @@ def measure_json_serialization(framework):
     try:
         r = requests.get(f"{server_url}/serialize_json")
         if r.status_code == 200:
-           return
+            return
     except Exception:
         return "Connection Error"
 

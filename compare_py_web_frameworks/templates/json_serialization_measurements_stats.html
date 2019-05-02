@@ -1,0 +1,34 @@
+{% load i18n %}
+<div class="container">
+    <h3>{% trans "Average Time:" %}</h3>
+    <div class="container">
+        <p>{% trans "Total measurements:" %} <span class="badge badge-secondary">{{ total_measurements }}</span></p>
+        <div class="card-deck">
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-header">Flask</div>
+                <div class="card-body">
+                    <iframe
+                        src="http://localhost:3000/d-solo/Lju_g6zZz/json-serialization?orgId=1&theme=light&panelId=2"
+                        width="250" height="270" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-header">Django</div>
+                <div class="card-body">
+                    <iframe
+                        src="http://localhost:3000/d-solo/Lju_g6zZz/json-serialization?orgId=1&theme=light&panelId=4"
+                        width="250" height="270" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-header">Pyramid</div>
+                <div class="card-body">
+                    <iframe
+                        src="http://localhost:3000/d-solo/Lju_g6zZz/json-serialization?orgId=1&theme=light&panelId=8"
+                        width="250" height="270" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

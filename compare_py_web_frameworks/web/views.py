@@ -7,15 +7,17 @@ from .helpers import (
     measure_template_rendering,
     measure_inserting_to_database,
     measure_external_api_call,
-    measure_json_serialization
+    measure_json_serialization,
 )
 from .measurements import (
     record_rendering_template_time,
     record_inserting_to_database_time,
     record_json_serialization_time,
+    record_external_api_call_time,
     get_all_rendered_measurements_number,
     get_all_inserted_measurements_number,
     get_all_external_api_call_measurements_number,
+    get_all_json_serialization_measurements_number,
 )
 
 
@@ -44,9 +46,15 @@ def rendering_template(request):
 
 @require_POST
 def record_rendering_template(request):
-    execution_time_django = measure_template_rendering(request, "django")
-    execution_time_flask = measure_template_rendering(request, "flask")
-    execution_time_pyramid = measure_template_rendering(request, "pyramid")
+    execution_time_django = measure_template_rendering(
+        request.POST["times"], request.POST["text"], "django"
+    )
+    execution_time_flask = measure_template_rendering(
+        request.POST["times"], request.POST["text"], "flask"
+    )
+    execution_time_pyramid = measure_template_rendering(
+        request.POST["times"], request.POST["text"], "pyramid"
+    )
     record_rendering_template_time(
         execution_time=execution_time_django,
         framework="django",
@@ -82,9 +90,13 @@ def inserting_to_database(request):
 
 @require_POST
 def record_inserting_to_database(request):
-    execution_time_django = measure_inserting_to_database(request, "django")
-    execution_time_flask = measure_inserting_to_database(request, "flask")
-    execution_time_pyramid = measure_inserting_to_database(request, "pyramid")
+    execution_time_django = measure_inserting_to_database(
+        request.POST["times"], "django"
+    )
+    execution_time_flask = measure_inserting_to_database(request.POST["times"], "flask")
+    execution_time_pyramid = measure_inserting_to_database(
+        request.POST["times"], "pyramid"
+    )
     record_inserting_to_database_time(
         execution_time_django,
         framework="django",
@@ -112,18 +124,27 @@ def external_api_call(request):
 
 @require_POST
 def record_external_api_call(request):
-    measure_external_api_call("flask")
-    measure_external_api_call("django")
-    measure_external_api_call("pyramid")
+    execution_time = measure_external_api_call("flask")
+    record_external_api_call_time(execution_time=execution_time, framework="flask")
+    execution_time = measure_external_api_call("django")
+    record_external_api_call_time(execution_time=execution_time, framework="django")
+    execution_time = measure_external_api_call("pyramid")
+    record_external_api_call_time(execution_time=execution_time, framework="pyramid")
     return redirect("external_api_call")
 
 
 def serialize_json(request):
-    return render(request, "serialize_json.html")
+    total_measurements = get_all_json_serialization_measurements_number()
+    return render(request, "serialize_json.html", {"total_measurements": total_measurements})
 
 
 @require_POST
 def record_json_serialization(request):
+    execution_time = measure_json_serialization("flask")
+    record_json_serialization_time(execution_time, "flask")
     execution_time = measure_json_serialization("django")
     record_json_serialization_time(execution_time, "django")
-    return redirect('serialize_json')
+    execution_time = measure_json_serialization("pyramid")
+    record_json_serialization_time(execution_time, "pyramid")
+    return redirect("serialize_json")
+

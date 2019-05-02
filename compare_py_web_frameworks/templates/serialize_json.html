@@ -6,10 +6,32 @@
         {% csrf_token %}
         <h2>{% trans "Serialize JSON" %}</h2>
         <p>{% trans "Serialize sample JSON object and return as response" %}</p>
+        <p>{% trans "Sample Object:" %}</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name (CharField)</th>
+                    <th scope="col">Surname (CharField)</th>
+                    <th scope="col">Date of birth (DateTimeField)</th>
+                    <th scope="col">Id Number (CharField)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Jim</td>
+                    <td>Bim</td>
+                    <td>1, 1, 1990</td>
+                    <td>b640b25b-7f2a-4d42-b2f1-989563199185</td>
+                </tr>
+            </tbody>
+        </table>
         </p>
         <div class="input-group mb-3">
             <button type="submit" class="btn btn-primary">{% trans "Serialize JSON" %}</button>
         </div>
     </form>
 </div>
+{% include "json_serialization_measurements_stats.html" %}
 {% endblock %}

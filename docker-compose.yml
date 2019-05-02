@@ -23,9 +23,11 @@ services:
   grafana:
     container_name: "grafana"
     image: "grafana/grafana"
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
     ports:
       - "3000:3000"
     links:
       - mysql
     volumes: 
-      - ~/Documents/Projekty/PyFrameworks/grafana:/var/lib/grafana
+      - ../grafana:/var/lib/grafana
