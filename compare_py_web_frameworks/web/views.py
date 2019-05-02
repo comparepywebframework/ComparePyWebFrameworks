@@ -25,6 +25,14 @@ def index(request):
     return render(request, "index.html")
 
 
+def flask_info(request):
+    return render(request, "flask.html")
+
+
+def django_info(request):
+    return render(request, "django.html")
+
+
 def rendering_template(request):
     number_of_records_100 = get_all_rendered_measurements_number(number_of_rendered=100)
     number_of_records_1000 = get_all_rendered_measurements_number(
@@ -135,7 +143,9 @@ def record_external_api_call(request):
 
 def serialize_json(request):
     total_measurements = get_all_json_serialization_measurements_number()
-    return render(request, "serialize_json.html", {"total_measurements": total_measurements})
+    return render(
+        request, "serialize_json.html", {"total_measurements": total_measurements}
+    )
 
 
 @require_POST

@@ -32,4 +32,6 @@ urlpatterns += i18n_patterns(
     path('record_external_api_call/', views.record_external_api_call, name="record_external_api_call"),
     path('serialize_json/', views.serialize_json, name="serialize_json"),
     path('record_json_serialization/', views.record_json_serialization, name="record_json_serialization"),
+    path('flask_info/', views.flask_info, name="flask_info"),
+    path('django_info/', views.django_info, name="django_info"),
 )

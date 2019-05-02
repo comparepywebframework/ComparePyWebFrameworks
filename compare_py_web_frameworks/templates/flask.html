@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+{% load i18n %}
+<div class="container">
+    <h1>Flask</h1>
+    <p>Flask jest to darmowy otwarto źródłowy mikro-framework powstały w 2004 roku. Flask jest klasyfikowany jako
+        mikro-framework z uwagi na to, że do uruchomienia nie wymaga żadnych specjalnych narzędzi ani bibliotek.</p>
+
+    <p>W 2012 roku jeden z największych serwisów społecznościowych na których można umieszczać zdjęcia Pinterest
+        przeniósł swoje API oparte o Django na framework Flask. Serwis Pinterest jest w stanie obsłużyć ponad 10
+        miliardów żądań HTTP tylko z użyciem tego oprogramowania[21].</p>
+
+    <p>W swojej podstawowej wersji nie posiada on tylu funkcji co opisany wcześniej framework Django. Nie zawiera w
+        sobie warstwy odpowiedzialnej za komunikację z bazą danych lub walidację formularzy. Wszystkie tego typu funkcje
+        oferowane są jako rozszerzenia do jego podstawowej wersji. Same rozszerzenia są również rozwijane przez
+        społeczność oraz osoby nie będące bezpośrednio w zespole programistów odpowiedzialnych za tworzenie tego
+        oprogramowania.</p>
+
+    <p>Rozszerzenia zawierają między innymi:</p>
+    <ul>
+        <li> ORM do komunikacji z bazą danych</li>
+        <li> Narzędzia wspierające wykonywanie migracji bazy danych</li>
+        <li> Narzędzia wspierające różne metody autentykacji</li>
+        <li> Walidację formularzy</li>
+    </ul>
+
+    <p>Główną zaletą frameworka Flask jest jego duża dowolność w konfiguracji, co przekłada się na możliwość
+        dostosowywania
+        go do specyfiki problemu, który chcą rozwiązać programiści. Nie narzuca on korzystania ze specyficznych narzędzi
+        dostarczanych wraz z dystrybucją a poza zapewnieniem w podstawowej wersji najbardziej niezbędnych
+        funkcjonalności
+        jak renderowanie stron HTML czy routing adresów URL [22].</p>
+
+    <p>W swojej podstawowej wersji zawiera:</p>
+
+    <ul>
+        <li> Serwer oraz debugger</li>
+        <li> Wsparcie dla testów jednostkowych</li>
+        <li> Język do generowania formularzy HTML Jinja2</li>
+        <li> Dyspozytor adresów URL</li>
+    </ul>
+    <p>Przykładem tego jak niewiele kodu jest potrzebne do tego aby z użyciem tego oprogramowania stworzyć pełnoprawny
+        serwer internetowy zdolny do zwracania odpowiedzi HTTP po wskazaniu konkretnego adresu URL jest kod widoczny
+        ponizej.</p>
+
+</div>
+{% endblock %}

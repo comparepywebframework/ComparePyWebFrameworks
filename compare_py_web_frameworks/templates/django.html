@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+{% load i18n %}
+<div class="container">
+    <h1>Django</h1>
+
+    <p>Django jest to darmowy otwarto źródłowy framework przeznaczony do tworzenia złożonych serwisów internetowych. Za
+        jego rozwój odpowiedzialna jest organizacja non-profit Django Software Foundation powstał on w 2005 roku i od
+        tamtej
+        pory jego popularność ciągle rośnie. Jest szeroko używany na rynku w takich organizacjach jak Mozilla,
+        Instagram,
+        Bitubcket [18]</p>
+
+    <p>Głównym celem Django jest uproszczenie tworzenia złożonych aplikacji wymagających użycia bazy danych. Dostarcza
+        on
+        wielu reużywalnych komponentów, które przydają się przy tworzeniu takich aplikacji jak na przykład panel
+        adminsitratora bazy danych, który upraszcza proces tworzenia oprogramowania.
+        Django wspiera architekturę MVC Model – Widok – Kontroller (ang. Model – View – Controller)
+        Za model odpowiedzialny jest ORM (ang. Object Relational Mapper) który stanowi pomost pomiędzy modelami danych
+        napisanymi z użyciem języka Python a relacyjną bazą danych. Za widok odpowiada system związany z przetwarzaniem
+        żądań HTTP oraz system generowania szablonów. Kontrolerem zaś w przypadku Django jest dyspozytor URL (ang. URL
+        Dispatcher), który steruje wyświetlaniem odpowiednich szablonów na podstawie podanego adresu URL [19].</p>
+
+    <p>W skład Django wchodzi również:</p>
+
+    <ul>
+        <p>Serwer służący do produkcji i testowania</p>
+        <p>System generowania szablonów, który posiada w sobie część koncepcji związanych z programowaniem obiektowym
+            jak
+            dziedziczenie.</p>
+        <p>System do serializacji obiektów do postacji obiektów JSON</p>
+        <p>System wspomagający tworzenie aplikacji tłumaczonych na różne języki</p>
+        <p>Interfejs do tworzenia testów jednostkowych</p>
+    </ul>
+
+    <p>Najważniejsze funkcje zawarte w podstawowej dystrybucji:</p>
+    <ul>
+        <li>System autentykacji użytkowników</li>
+        <li>Panel adminstratora bazy danych widoczny na Rys 1.</li>
+        <li>Wbudowane zabezpieczenia dla najbardziej popularnych ataków jak wstrzykiwanie SQL czy łamanie haseł.</li>
+    </ul>
+
+    {% load static %}
+    <img src="{% static 'images/django-1.png' %}">
+    <p>Rys.1 Panel administratora Django, ułatwiający zarządzanie bazą danych.</p>
+
+    <p>Największą zaletą wpływająca na popularność tego frameworka jest duża społeczność skupiona wokół niego co
+        prowadzi do tworzenia rozbudowanej dokumentacji oraz wielu poradników. Również najpowszechniej występujące
+        problemy związane z użytkowaniem tego frameworka zostały bardzo dobrze wyjaśnione w internecie.
+        Organizowane są również coroczne konfernecje dla programistów DjangoCon na których następuje wymiana wiedzy
+        pomiędzy osobami zarówno tworzącymi sam framework jak jego użytkownikami [20].</p>
+
+</div>
+{% endblock %}
