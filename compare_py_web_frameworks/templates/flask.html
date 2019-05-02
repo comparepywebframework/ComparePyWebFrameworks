@@ -41,7 +41,11 @@
     </ul>
     <p>Przykładem tego jak niewiele kodu jest potrzebne do tego aby z użyciem tego oprogramowania stworzyć pełnoprawny
         serwer internetowy zdolny do zwracania odpowiedzi HTTP po wskazaniu konkretnego adresu URL jest kod widoczny
-        ponizej.</p>
+        ponizejna Rys 1.</p>
+    
+    {% load static %}
+    <img src="{% static 'images/flask-1.png' %}">
+    <p>Rys 1. Przykładowy serwer stworzony z użyciem Flask </p>
 
 </div>
 {% endblock %}

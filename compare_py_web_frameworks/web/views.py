@@ -33,6 +33,10 @@ def django_info(request):
     return render(request, "django.html")
 
 
+def pyramid_info(request):
+    return render(request, "pyramid.html")
+
+
 def rendering_template(request):
     number_of_records_100 = get_all_rendered_measurements_number(number_of_rendered=100)
     number_of_records_1000 = get_all_rendered_measurements_number(

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-01 16:18+0200\n"
+"POT-Creation-Date: 2019-05-02 17:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,8 +36,14 @@ msgstr "Wprowadzanie danych do bazy danych"
 msgid "External API Call"
 msgstr "Wywołanie zewnętrznego API"
 
+#: templates/base.html:31 templates/serialize_json.html:7
+#: templates/serialize_json.html:32
+msgid "Serialize JSON"
+msgstr "Serializuj JSON"
+
 #: templates/database_measurements_stats.html:3
 #: templates/external_api_call_measurements_stats.html:3
+#: templates/json_serialization_measurements_stats.html:3
 #: templates/rendering_template_measurements_stats.html:3
 msgid "Average Time:"
 msgstr "Średni czas"
@@ -50,6 +56,7 @@ msgstr "10 rekordów"
 #: templates/database_measurements_stats.html:37
 #: templates/database_measurements_stats.html:67
 #: templates/external_api_call_measurements_stats.html:5
+#: templates/json_serialization_measurements_stats.html:5
 #: templates/rendering_template_measurements_stats.html:6
 #: templates/rendering_template_measurements_stats.html:37
 #: templates/rendering_template_measurements_stats.html:68
@@ -68,17 +75,37 @@ msgstr "100 Rekordów"
 msgid ""
 "Make request to external API (https://openweathermap.org) to get weather "
 "forecast for Katowice and return response"
-msgstr "Wyślij żądanie do zewnętrznego API (https://openweathermap.org) w celu pobrania prognozy pogody dla Katowic i zwróć jako odpowiedź"
+msgstr ""
+"Wyślij żądanie do zewnętrznego API (https://openweathermap.org) w celu "
+"pobrania prognozy pogody dla Katowic i zwróć jako odpowiedź"
 
 #: templates/external_api_call.html:11
 msgid "Make Request"
 msgstr "Wyślij żądanie"
 
+#: templates/index.html:11
+msgid "Flask is a free open-source micro-framework created in 2004."
+msgstr "Flask jest darmowym otwarto źródłowym mikro-frameworkiem stworzonym w 2004 roku"
+
+#: templates/index.html:12 templates/index.html:23 templates/index.html:31
+msgid "Learn more"
+msgstr "Dowiedz się więcej"
+
+#: templates/index.html:21
+msgid ""
+"Django is a free open-source framework for desigining complex web services "
+"created in 2005."
+msgstr "Django jest darmowym otwarto źródłowym frameworkiem przeznaczonym do tworzenia złozonych serwisów internetowych stworzonym w 2005 roku"
+
+#: templates/index.html:30
+msgid "Pyramid is a free open-source micro-framework created in 2008. "
+msgstr "Pyramid jest darmowym otwarto źródłowym mikro-frameworkiem stworzonym w 2008 roku"
+
 #: templates/inserting_to_database.html:7
 msgid "Inserting objects to database"
 msgstr "Wprowadzanie obiektów do bazy danych"
 
-#: templates/inserting_to_database.html:8
+#: templates/inserting_to_database.html:8 templates/serialize_json.html:9
 msgid "Sample Object:"
 msgstr "Przykładowy obiekt"
 
@@ -117,3 +144,7 @@ msgstr "1000 elementów"
 #: templates/rendering_template_measurements_stats.html:67
 msgid "10000 elements"
 msgstr "10000 elementów"
+
+#: templates/serialize_json.html:8
+msgid "Serialize sample JSON object and return as response"
+msgstr "Serializuj przykładowy obiekt JSON i zwróć jako odpowiedź"

@@ -14,7 +14,7 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- CSS -->
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="#">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="{% url 'index' %}">{% trans "ComparePyWebFrameworks" %}</a> 
@@ -34,7 +34,6 @@
 </nav>
 
 <body>
-
     {% block content %}{% endblock %}
 </body>
 

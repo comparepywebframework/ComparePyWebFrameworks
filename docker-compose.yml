@@ -16,6 +16,8 @@ services:
     command: bash -c "./wait-for-it.sh -t 0 mysql:3306 -- python manage.py migrate && python manage.py loaddata db_fixtures.json && python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - mysql
+    depends_on:
+      - grafana
     links:
       - mysql
     ports:
@@ -30,4 +32,4 @@ services:
     links:
       - mysql
     volumes: 
-      - ../grafana:/var/lib/grafana
+      - ./grafana:/var/lib/grafana

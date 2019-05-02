@@ -34,4 +34,5 @@ urlpatterns += i18n_patterns(
     path('record_json_serialization/', views.record_json_serialization, name="record_json_serialization"),
     path('flask_info/', views.flask_info, name="flask_info"),
     path('django_info/', views.django_info, name="django_info"),
+    path('pyramid_info/', views.pyramid_info, name="pyramid_info"),
 )
