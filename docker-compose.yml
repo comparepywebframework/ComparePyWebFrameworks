@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mysql_compare:
-    container_name: "mysql"
+    container_name: "mysql_compare"
     image: mysql:latest
     ports:
       - "3312:3306"
@@ -15,7 +15,7 @@ services:
     build: .
     command: bash -c "./wait-for-it.sh -t 0 mysql_compare:3306 -- python manage.py migrate && python manage.py loaddata db_fixtures.json && python manage.py runserver 0.0.0.0:8000"
     depends_on:
-      - mysql
+      - mysql_compare
     depends_on:
       - grafana
     links:
