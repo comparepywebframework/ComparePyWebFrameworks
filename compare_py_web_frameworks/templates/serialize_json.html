@@ -32,6 +32,11 @@
             <button type="submit" class="btn btn-primary">{% trans "Serialize JSON" %}</button>
         </div>
     </form>
+    {% if error_message %}
+    <div class="alert alert-danger" role="alert">
+        {{ error_message }}
+    </div>
+    {% endif %}
 </div>
 {% include "json_serialization_measurements_stats.html" %}
 {% endblock %}

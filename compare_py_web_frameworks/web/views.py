@@ -3,6 +3,7 @@ import requests
 import json
 import time
 from django.views.decorators.http import require_POST
+from .error_messages import ErrorMessage
 from .helpers import (
     measure_template_rendering,
     measure_inserting_to_database,
@@ -45,6 +46,18 @@ def rendering_template(request):
     number_of_records_10000 = get_all_rendered_measurements_number(
         number_of_rendered=10000
     )
+    if request.session.get("error_message", False):
+        request.session["error_message"] = False
+        return render(
+            request,
+            "rendering_template.html",
+            {
+                "number_of_records_100": number_of_records_100,
+                "number_of_records_1000": number_of_records_1000,
+                "number_of_records_10000": number_of_records_10000,
+                "error_message": ErrorMessage.CONNECTION_ERROR.value,
+            },
+        )
     return render(
         request,
         "rendering_template.html",
@@ -58,30 +71,33 @@ def rendering_template(request):
 
 @require_POST
 def record_rendering_template(request):
-    execution_time_django = measure_template_rendering(
+    django_status, execution_time_django = measure_template_rendering(
         request.POST["times"], request.POST["text"], "django"
     )
-    execution_time_flask = measure_template_rendering(
+    flask_status, execution_time_flask = measure_template_rendering(
         request.POST["times"], request.POST["text"], "flask"
     )
-    execution_time_pyramid = measure_template_rendering(
+    pyramid_status, execution_time_pyramid = measure_template_rendering(
         request.POST["times"], request.POST["text"], "pyramid"
     )
-    record_rendering_template_time(
-        execution_time=execution_time_django,
-        framework="django",
-        number_of_rendered=request.POST["times"],
-    )
-    record_rendering_template_time(
-        execution_time=execution_time_flask,
-        framework="flask",
-        number_of_rendered=request.POST["times"],
-    )
-    record_rendering_template_time(
-        execution_time=execution_time_pyramid,
-        framework="pyramid",
-        number_of_rendered=request.POST["times"],
-    )
+    if flask_status and django_status and pyramid_status:
+        record_rendering_template_time(
+            execution_time=execution_time_django,
+            framework="django",
+            number_of_rendered=request.POST["times"],
+        )
+        record_rendering_template_time(
+            execution_time=execution_time_flask,
+            framework="flask",
+            number_of_rendered=request.POST["times"],
+        )
+        record_rendering_template_time(
+            execution_time=execution_time_pyramid,
+            framework="pyramid",
+            number_of_rendered=request.POST["times"],
+        )
+    else:
+        request.session["error_message"] = True
     return redirect("rendering_template")
 
 
@@ -89,6 +105,18 @@ def inserting_to_database(request):
     number_of_records_10 = get_all_inserted_measurements_number(number_of_records=10)
     number_of_records_50 = get_all_inserted_measurements_number(number_of_records=50)
     number_of_records_100 = get_all_inserted_measurements_number(number_of_records=100)
+    if request.session.get("error_message", False):
+        request.session['error_message'] = False
+        return render(
+            request,
+            "inserting_to_database.html",
+            {
+                "number_of_records_10": number_of_records_10,
+                "number_of_records_50": number_of_records_50,
+                "number_of_records_100": number_of_records_100,
+                "error_message": ErrorMessage.CONNECTION_ERROR.value
+            },
+        )
     return render(
         request,
         "inserting_to_database.html",
@@ -102,33 +130,48 @@ def inserting_to_database(request):
 
 @require_POST
 def record_inserting_to_database(request):
-    execution_time_django = measure_inserting_to_database(
-        request.POST["times"], "django"
+    django_status, execution_time_django = measure_inserting_to_database(
+        request.POST["times"], framework="django"
     )
-    execution_time_flask = measure_inserting_to_database(request.POST["times"], "flask")
-    execution_time_pyramid = measure_inserting_to_database(
-        request.POST["times"], "pyramid"
+    flask_status, execution_time_flask = measure_inserting_to_database(
+        request.POST["times"], framework="flask"
     )
-    record_inserting_to_database_time(
-        execution_time_django,
-        framework="django",
-        number_of_inserted=request.POST["times"],
+    pyramid_status, execution_time_pyramid = measure_inserting_to_database(
+        request.POST["times"], framework="pyramid"
     )
-    record_inserting_to_database_time(
-        execution_time_flask,
-        framework="flask",
-        number_of_inserted=request.POST["times"],
-    )
-    record_inserting_to_database_time(
-        execution_time_pyramid,
-        framework="pyramid",
-        number_of_inserted=request.POST["times"],
-    )
+    if django_status and flask_status and pyramid_status:
+        record_inserting_to_database_time(
+            execution_time_django,
+            framework="django",
+            number_of_inserted=request.POST["times"],
+        )
+        record_inserting_to_database_time(
+            execution_time_flask,
+            framework="flask",
+            number_of_inserted=request.POST["times"],
+        )
+        record_inserting_to_database_time(
+            execution_time_pyramid,
+            framework="pyramid",
+            number_of_inserted=request.POST["times"],
+        )
+    else:
+        request.session["error_message"] = True
     return redirect("inserting_to_database")
 
 
 def external_api_call(request):
     total_measurements = get_all_external_api_call_measurements_number()
+    if request.session.get("error_message", False):
+        request.session["error_message"] = False
+        return render(
+            request,
+            "external_api_call.html",
+            {
+                "total_measurements": total_measurements,
+                "error_message": ErrorMessage.CONNECTION_ERROR.value,
+            },
+        )
     return render(
         request, "external_api_call.html", {"total_measurements": total_measurements}
     )
@@ -136,17 +179,32 @@ def external_api_call(request):
 
 @require_POST
 def record_external_api_call(request):
-    execution_time = measure_external_api_call("flask")
-    record_external_api_call_time(execution_time=execution_time, framework="flask")
-    execution_time = measure_external_api_call("django")
-    record_external_api_call_time(execution_time=execution_time, framework="django")
-    execution_time = measure_external_api_call("pyramid")
-    record_external_api_call_time(execution_time=execution_time, framework="pyramid")
+    flask_status, execution_time = measure_external_api_call("flask")
+    django_status, execution_time = measure_external_api_call("django")
+    pyramid_status, execution_time = measure_external_api_call("pyramid")
+    if flask_status and django_status and pyramid_status:
+        record_external_api_call_time(execution_time=execution_time, framework="flask")
+        record_external_api_call_time(execution_time=execution_time, framework="django")
+        record_external_api_call_time(
+            execution_time=execution_time, framework="pyramid"
+        )
+    else:
+        request.session["error_message"] = True
     return redirect("external_api_call")
 
 
 def serialize_json(request):
     total_measurements = get_all_json_serialization_measurements_number()
+    if request.session.get("error_message", False):
+        request.session["error_message"] = False
+        return render(
+            request,
+            "serialize_json.html",
+            {
+                "total_measurements": total_measurements,
+                "error_message": ErrorMessage.CONNECTION_ERROR.value,
+            },
+        )
     return render(
         request, "serialize_json.html", {"total_measurements": total_measurements}
     )
@@ -154,11 +212,14 @@ def serialize_json(request):
 
 @require_POST
 def record_json_serialization(request):
-    execution_time = measure_json_serialization("flask")
-    record_json_serialization_time(execution_time, "flask")
-    execution_time = measure_json_serialization("django")
-    record_json_serialization_time(execution_time, "django")
-    execution_time = measure_json_serialization("pyramid")
-    record_json_serialization_time(execution_time, "pyramid")
+    flask_status, execution_time = measure_json_serialization("flask")
+    django_status, execution_time = measure_json_serialization("django")
+    pyramid_status, execution_time = measure_json_serialization("pyramid")
+    if flask_status and django_status and pyramid_status:
+        record_json_serialization_time(execution_time, "flask")
+        record_json_serialization_time(execution_time, "django")
+        record_json_serialization_time(execution_time, "pyramid")
+    else:
+        request.session["error_message"] = True
     return redirect("serialize_json")
 

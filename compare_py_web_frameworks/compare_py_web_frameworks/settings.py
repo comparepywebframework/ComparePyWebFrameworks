@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'compare_py_web_frameworks',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': 'mysql_compare',
+        'HOST': '0.0.0.0',
         'PORT': '3306',
     }
 }
@@ -133,3 +133,29 @@ STATICFILES_DIRS = (
 )
 
 STATIC_URL = '/static/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '{levelname} {asctime} | {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, "web_logs"),
+            'formatter': 'simple'
+        },
+    },
+    'loggers': {
+        'web': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
