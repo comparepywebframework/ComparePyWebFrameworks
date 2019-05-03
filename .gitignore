@@ -110,4 +110,4 @@ venv.bak/
 .DS_Store
 
 #logs
-web_logs
+web_logs.log
