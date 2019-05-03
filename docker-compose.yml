@@ -22,6 +22,8 @@ services:
       - mysql_compare
     ports:
       - "8002:8002"
+    volumes:
+      - ./logs:/app/compare_py_web_frameworks/web_logs
   grafana:
     container_name: "grafana"
     image: "grafana/grafana"
