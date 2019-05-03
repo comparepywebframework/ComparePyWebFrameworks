@@ -18,8 +18,10 @@ os.system('git clone https://github.com/comparepywebframework/Pyramid_framework.
 django_framework = Path('Django_framework')
 flask_framework = Path('Flask_framework')
 pyramid_framework = Path('Pyramid_framework')
+compare_py_web_frameworks = Path('ComparePyWebFrameworks')
 
 #Build main service
+os.chdir(str(compare_py_web_frameworks))
 os.system('docker-compose up -d --build')
 
 #Build Django_framework service
