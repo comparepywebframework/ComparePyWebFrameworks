@@ -147,7 +147,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, "web_logs"),
+            'filename': os.path.join(BASE_DIR, "logs", "web_logs"),
             'formatter': 'simple'
         },
     },
