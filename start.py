@@ -22,6 +22,7 @@ compare_py_web_frameworks = Path('ComparePyWebFrameworks')
 
 #Build main service
 os.chdir(str(compare_py_web_frameworks))
+os.system('sudo chown -R 472 grafana/')
 os.system('docker-compose up -d --build')
 
 #Build Django_framework service
