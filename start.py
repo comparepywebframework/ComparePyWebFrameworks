@@ -14,10 +14,10 @@ os.system('git clone https://github.com/comparepywebframework/Django_framework.g
 os.system('git clone https://github.com/comparepywebframework/Flask_framework.git')
 os.system('git clone https://github.com/comparepywebframework/Pyramid_framework.git')
 
-django_framework = '../Django_framework'
+django_framework = 'Django_framework'
 flask_framework = '../Flask_framework'
 pyramid_framework = '../Pyramid_framework'
-compare_py_web_frameworks = 'ComparePyWebFrameworks'
+compare_py_web_frameworks = '../ComparePyWebFrameworks'
 
 #Build django_framework image 
 os.chdir(django_framework)
