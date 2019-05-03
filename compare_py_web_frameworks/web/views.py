@@ -46,6 +46,18 @@ def rendering_template(request):
     number_of_records_10000 = get_all_rendered_measurements_number(
         number_of_rendered=10000
     )
+    if request.session.get("error_message", False):
+        request.session["error_message"] = False 
+        return render(
+            request,
+            "rendering_template.html",
+            {
+                "number_of_records_100": number_of_records_100,
+                "number_of_records_1000": number_of_records_1000,
+                "number_of_records_10000": number_of_records_10000,
+                "error_message": ErrorMessage.CONNECTION_ERROR.value
+            },
+        )
     return render(
         request,
         "rendering_template.html",
@@ -59,30 +71,33 @@ def rendering_template(request):
 
 @require_POST
 def record_rendering_template(request):
-    execution_time_django = measure_template_rendering(
+    django_status, execution_time_django = measure_template_rendering(
         request.POST["times"], request.POST["text"], "django"
     )
-    execution_time_flask = measure_template_rendering(
+    flask_status, execution_time_flask = measure_template_rendering(
         request.POST["times"], request.POST["text"], "flask"
     )
-    execution_time_pyramid = measure_template_rendering(
+    pyramid_status, execution_time_pyramid = measure_template_rendering(
         request.POST["times"], request.POST["text"], "pyramid"
     )
-    record_rendering_template_time(
-        execution_time=execution_time_django,
-        framework="django",
-        number_of_rendered=request.POST["times"],
-    )
-    record_rendering_template_time(
-        execution_time=execution_time_flask,
-        framework="flask",
-        number_of_rendered=request.POST["times"],
-    )
-    record_rendering_template_time(
-        execution_time=execution_time_pyramid,
-        framework="pyramid",
-        number_of_rendered=request.POST["times"],
-    )
+    if flask_status and django_status and pyramid_status:
+        record_rendering_template_time(
+            execution_time=execution_time_django,
+            framework="django",
+            number_of_rendered=request.POST["times"],
+        )
+        record_rendering_template_time(
+            execution_time=execution_time_flask,
+            framework="flask",
+            number_of_rendered=request.POST["times"],
+        )
+        record_rendering_template_time(
+            execution_time=execution_time_pyramid,
+            framework="pyramid",
+            number_of_rendered=request.POST["times"],
+        )
+    else:
+        request.session["error_message"] = True
     return redirect("rendering_template")
 
 
