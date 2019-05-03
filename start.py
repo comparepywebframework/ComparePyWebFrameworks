@@ -7,7 +7,7 @@ os.mkdir('../' 'BenchmarkPyWebFrameworks')
 
 shutil.move('start.py', '..')
 os.chdir('..')
-shutil.move('Compare', 'BenchmarkPyWebFrameworks')
+shutil.move('ComparePyWebFrameworks', 'BenchmarkPyWebFrameworks')
 
 os.chdir('BenchmarkPyWebFrameworks')
 
