@@ -14,24 +14,24 @@ os.system('git clone https://github.com/comparepywebframework/Django_framework.g
 os.system('git clone https://github.com/comparepywebframework/Flask_framework.git')
 os.system('git clone https://github.com/comparepywebframework/Pyramid_framework.git')
 
-django_framework = os.path('../Django_framework')
-flask_framework = os.path('../Flask_framework')
-pyramid_framework = os.path('../Pyramid_framework')
-compare_py_web_frameworks = os.path('ComparePyWebFrameworks')
+django_framework = '../Django_framework'
+flask_framework = '../Flask_framework'
+pyramid_framework = '../Pyramid_framework'
+compare_py_web_frameworks = 'ComparePyWebFrameworks'
 
 #Build main service
-os.chdir(str(compare_py_web_frameworks))
+os.chdir(compare_py_web_frameworks)
 os.system('sudo chown -R 472 grafana/')
 os.system('docker-compose up -d --build')
 
 #Build Django_framework service
-os.chdir(str(django_framework))
+os.chdir(django_framework)
 os.system('docker-compose up -d --build')
 
 #Build Flask_framework service
-os.chdir(str(flask_framework))
+os.chdir(flask_framework)
 os.system('docker-compose up -d --build')
 
 #Build Pyramid_framework service
-os.chdir(str(pyramid_framework))
+os.chdir(pyramid_framework)
 os.system('docker-compose up -d --build')
