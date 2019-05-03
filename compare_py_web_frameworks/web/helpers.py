@@ -29,7 +29,7 @@ def measure_template_rendering(times, text, framework):
             logger.info(f"Render template msg sent to - {framework}")
             return True
     except Exception as e:
-        logger.error(f"Rendering template connection error - {framework} - {e.message}")
+        logger.error(f"Rendering template connection error - {framework} - {e}")
         return False 
 
 
@@ -43,7 +43,7 @@ def measure_inserting_to_database(times, framework):
             r = requests.post(f"{server_url}/clear_shops_table")
             return True
     except Exception as e:
-        logger.error(f"Inserting data to database connection error - {framework} - {e.message}")
+        logger.error(f"Inserting data to database connection error - {framework} - {e}")
         return False 
 
 
@@ -57,7 +57,7 @@ def measure_external_api_call(framework):
             logger.info(f"External API call msg sent to - {framework}")
             return True
     except Exception as e:
-        logger.error(f"External API Call connection error - {framework} = {e.message}")
+        logger.error(f"External API Call connection error - {framework} = {e}")
         return False 
 
 
@@ -70,6 +70,6 @@ def measure_json_serialization(framework):
             logger.info(f"Serialize JSON msg sent to - {framework}")
             return True
     except Exception as e:
-        logger.error(f"JSON Serialization connection error - {framework} - {e.message}")
+        logger.error(f"JSON Serialization connection error - {framework} - {e}")
         return False
 
