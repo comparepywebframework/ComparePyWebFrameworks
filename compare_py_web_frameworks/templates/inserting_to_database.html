@@ -42,6 +42,11 @@
             <button type="submit" class="btn btn-primary">{% trans "Insert" %}</button>
         </div>
     </form>
+    {% if error_message %}
+    <div class="alert alert-danger" role="alert">
+        {{ error_message }}
+    </div>
+    {% endif %}
 </div>
 {% include "database_measurements_stats.html" %}
 {% endblock %}
