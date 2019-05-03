@@ -5,13 +5,16 @@ import shutil
 #Make folder for all
 os.mkdir('../' 'BenchmarkPyWebFrameworks')
 
-os.chdir('../BenchmarkPyWebFrameworks')
+shutil.move('start.py', '..')
+os.chdir('..')
+shutil.move('Compare', 'BenchmarkPyWebFrameworks')
 
-shutil.move('ComparePyWebFrameworks', '.')
+os.chdir('BenchmarkPyWebFrameworks')
 
-os.system('git clone https://github.com/comparepywebframework/Django_framework.git ..')
-os.system('git clone https://github.com/comparepywebframework/Flask_framework.git ..')
-os.system('git clone https://github.com/comparepywebframework/Pyramid_framework.git ..')
+
+os.system('git clone https://github.com/comparepywebframework/Django_framework.git')
+os.system('git clone https://github.com/comparepywebframework/Flask_framework.git')
+os.system('git clone https://github.com/comparepywebframework/Pyramid_framework.git')
 
 django_framework = Path('BenchmarkPyWebFrameworks/Django_framework')
 flask_framework = Path('BenchmarkPyWebFrameworks/Flask_framework')
