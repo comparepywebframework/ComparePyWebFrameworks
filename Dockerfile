@@ -7,7 +7,7 @@ COPY . /app
 # Install all dependencies                                                 
 RUN pip install -r requirements.txt                                        
 # Expose port                                                              
-EXPOSE 8000
+EXPOSE 8002
 # Change working directory
 WORKDIR /app/compare_py_web_frameworks
 
