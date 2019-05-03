@@ -23,7 +23,7 @@ services:
     ports:
       - "8002:8002"
     volumes:
-      - ./logs:/app/compare_py_web_frameworks/web_logs
+      - ${PWD}/logs/web_logs.log:/app/compare_py_web_frameworks/web_logs.log
   grafana:
     container_name: "grafana"
     image: "grafana/grafana"
