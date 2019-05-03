@@ -5,12 +5,11 @@ import shutil
 #Make folder for all
 os.mkdir('../' 'BenchmarkPyWebFrameworks')
 
-shutil.move('start.py', '..')
+shutil.move('start.py', '../BenchmarkPyWebFrameworks')
 os.chdir('..')
 shutil.move('ComparePyWebFrameworks', 'BenchmarkPyWebFrameworks')
 
 os.chdir('BenchmarkPyWebFrameworks')
-
 
 os.system('git clone https://github.com/comparepywebframework/Django_framework.git')
 os.system('git clone https://github.com/comparepywebframework/Flask_framework.git')
