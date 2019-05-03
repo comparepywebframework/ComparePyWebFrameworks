@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'compare_py_web_frameworks',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': '0.0.0.0',
+        'HOST': 'mysql_compare',
         'PORT': '3306',
     }
 }
