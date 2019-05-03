@@ -6,9 +6,9 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-DJANGO_SERVER_URL = "http://0.0.0.0:8001"
-FLASK_SERVER_URL = "http://0.0.0.0:5000"
-PYRAMID_SERVER_URL = "http://0.0.0.0:6543"
+DJANGO_SERVER_URL = "http://djangoframework:8001"
+FLASK_SERVER_URL = "http://flask_framework:5000"
+PYRAMID_SERVER_URL = "http://pyramid_framework:6543"
 
 
 def get_server_url(framework):
@@ -28,8 +28,8 @@ def measure_template_rendering(times, text, framework):
         if r.status_code == 200:
             logger.info(f"Render template msg sent to - {framework}")
             return True
-    except Exception:
-        logger.error(f"Rendering template connection error - {framework}")
+    except Exception as e:
+        logger.error(f"Rendering template connection error - {framework} - {e.message}")
         return False 
 
 
@@ -42,8 +42,8 @@ def measure_inserting_to_database(times, framework):
             logger.info(f"Insert data to database msg sent to - {framework}")
             r = requests.post(f"{server_url}/clear_shops_table")
             return True
-    except Exception:
-        logger.error(f"Inserting data to database connection error - {framework}")
+    except Exception as e:
+        logger.error(f"Inserting data to database connection error - {framework} - {e.message}")
         return False 
 
 
@@ -56,8 +56,8 @@ def measure_external_api_call(framework):
         if r.status_code == 200:
             logger.info(f"External API call msg sent to - {framework}")
             return True
-    except Exception:
-        logger.error(f"External API Call connection error - {framework}")
+    except Exception as e:
+        logger.error(f"External API Call connection error - {framework} = {e.message}")
         return False 
 
 
@@ -69,7 +69,7 @@ def measure_json_serialization(framework):
         if r.status_code == 200:
             logger.info(f"Serialize JSON msg sent to - {framework}")
             return True
-    except Exception:
-        logger.error(f"JSON Serialization connection error - {framework}")
+    except Exception as e:
+        logger.error(f"JSON Serialization connection error - {framework} - {e.message}")
         return False
 

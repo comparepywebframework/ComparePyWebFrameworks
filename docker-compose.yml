@@ -10,18 +10,40 @@ services:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "compare_py_web_frameworks"
     command: --default-authentication-plugin=mysql_native_password
-  web:
+  compare_py_web_frameworks:
     container_name: "compare_py_web_frameworks"
     build: .
     command: bash -c "./wait-for-it.sh -t 0 mysql_compare:3306 -- python manage.py migrate && python manage.py runserver 0.0.0.0:8002"
     depends_on:
       - mysql_compare
-    depends_on:
       - grafana
+      - djangoframework
+      - flask_framework
+      - pyramid_framework
     links:
       - mysql_compare
+      - flask_framework
+      - pyramid_framework
     ports:
       - "8002:8002"
+  djangoframework:
+    container_name: "djangoframework"
+    image: "django_framework:latest"
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8001"
+    ports:
+      - "8001:8001"
+  flask_framework:
+    container_name: "flask_framework"
+    image: "flask_framework:latest"
+    ports:
+      - "5000:5000"
+    command: bash -c "flask db upgrade && python app.py"
+  pyramid_framework:
+    container_name: "pyramid_framework"
+    image: "pyramid_framework:latest"
+    ports:
+      - "6543:6543"
+    command: bash -c "alembic -c production.ini upgrade head && pserve production.ini"
   grafana:
     container_name: "grafana"
     image: "grafana/grafana"
