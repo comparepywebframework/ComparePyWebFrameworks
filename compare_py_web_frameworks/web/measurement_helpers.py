@@ -6,7 +6,7 @@ def measure_execution_time(func):
     @wraps(func)
     def wrapped(*args, **kwargs):
         start = time.time()
-        func(*args, **kwargs)
+        status = func(*args, **kwargs)
         end = time.time()
-        return end - start
+        return status, end - start
     return wrapped
