@@ -29,7 +29,7 @@ os.system('docker build -t=flask_framework .')
 
 #Build pyramid_framework image
 os.chdir(pyramid_framework)
-os.system('docker build -t=pyramid_frameowrk .')
+os.system('docker build -t=pyramid_framework .')
 
 #Build main service
 os.chdir(compare_py_web_frameworks)
