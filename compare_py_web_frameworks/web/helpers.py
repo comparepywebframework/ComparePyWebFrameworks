@@ -57,7 +57,7 @@ def measure_external_api_call(framework):
             logger.info(f"External API call msg sent to - {framework}")
             return True
     except Exception as e:
-        logger.error(f"External API Call connection error - {framework} = {e}")
+        logger.error(f"External API Call connection error - {framework} - {e}")
         return False 
 
 
