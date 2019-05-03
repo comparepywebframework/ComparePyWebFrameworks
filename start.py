@@ -1,5 +1,4 @@
 import os
-from pathlib import Path
 import shutil
 
 #Make folder for all
@@ -15,10 +14,10 @@ os.system('git clone https://github.com/comparepywebframework/Django_framework.g
 os.system('git clone https://github.com/comparepywebframework/Flask_framework.git')
 os.system('git clone https://github.com/comparepywebframework/Pyramid_framework.git')
 
-django_framework = Path('../Django_framework')
-flask_framework = Path('../Flask_framework')
-pyramid_framework = Path('../Pyramid_framework')
-compare_py_web_frameworks = Path('ComparePyWebFrameworks')
+django_framework = os.path('../Django_framework')
+flask_framework = os.path('../Flask_framework')
+pyramid_framework = os.path('../Pyramid_framework')
+compare_py_web_frameworks = os.path('ComparePyWebFrameworks')
 
 #Build main service
 os.chdir(str(compare_py_web_frameworks))
