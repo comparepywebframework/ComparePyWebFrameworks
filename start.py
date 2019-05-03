@@ -16,9 +16,9 @@ os.system('git clone https://github.com/comparepywebframework/Django_framework.g
 os.system('git clone https://github.com/comparepywebframework/Flask_framework.git')
 os.system('git clone https://github.com/comparepywebframework/Pyramid_framework.git')
 
-django_framework = Path('BenchmarkPyWebFrameworks/Django_framework')
-flask_framework = Path('BenchmarkPyWebFrameworks/Flask_framework')
-pyramid_framework = Path('BenchmarkPyWebFrameworks/Pyramid_framework')
+django_framework = Path('Django_framework')
+flask_framework = Path('Flask_framework')
+pyramid_framework = Path('Pyramid_framework')
 
 #Build main service
 os.system('docker-compose up -d --build')
