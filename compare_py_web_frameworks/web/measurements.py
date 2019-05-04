@@ -48,7 +48,6 @@ def record_json_serialization_time(execution_time, framework):
     return True
 
 
-
 def get_all_rendered_measurements_number(number_of_rendered):
     return RenderingTemplateMeasurement.objects.filter(
         number_of_rendered=number_of_rendered, framework="django"
@@ -67,3 +66,7 @@ def get_all_external_api_call_measurements_number():
 
 def get_all_json_serialization_measurements_number():
     return JSONSerializationMeasurement.objects.filter(framework="django").count()
+
+
+def get_last_json_serialization_record(framework):
+    return JSONSerializationMeasurement.objects.filter(framework=framework).last()

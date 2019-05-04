@@ -1,0 +1,14 @@
+.btn-primary {
+    color: #fff;
+    background-color: #096386;
+    border-color: #096386;
+}
+
+.btn-primary:hover {
+    background-color: #0a6a8f;
+    border-color: #0a6a8f; 
+}
+
+.navbar {
+    background-color: #87c0cd
+}

@@ -3,7 +3,7 @@ import requests
 import json
 import time
 from django.views.decorators.http import require_POST
-from .error_messages import ErrorMessage
+from .error_messages import ErrorMessage, errors
 from .helpers import (
     measure_template_rendering,
     measure_inserting_to_database,
@@ -20,6 +20,8 @@ from .measurements import (
     get_all_external_api_call_measurements_number,
     get_all_json_serialization_measurements_number,
 )
+
+from .measurement_helpers import get_last_execution_time
 
 
 def index(request):
@@ -181,18 +183,24 @@ def record_external_api_call(request):
 
 def serialize_json(request):
     total_measurements = get_all_json_serialization_measurements_number()
+    last_executon_time_django = get_last_execution_time("django")
+    last_executon_time_flask = get_last_execution_time("flask")
+    last_executon_time_pyramid = get_last_execution_time("pyramid")
+    measurements = {
+        "total_measurements": total_measurements,
+        "last_execution_time_flask": last_executon_time_flask,
+        "last_execution_time_django": last_executon_time_django,
+        "last_execution_time_pyramid": last_executon_time_pyramid,
+    }
     if request.session.get("error_message", False):
         request.session["error_message"] = False
         return render(
             request,
             "serialize_json.html",
-            {
-                "total_measurements": total_measurements,
-                "error_message": ErrorMessage.CONNECTION_ERROR.value,
-            },
+            {"measurements": measurements, "errors": errors},
         )
     return render(
-        request, "serialize_json.html", {"total_measurements": total_measurements}
+        request, "serialize_json.html", {"measurements": measurements, "errors": errors}
     )
 
 
