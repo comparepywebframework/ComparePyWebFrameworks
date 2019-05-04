@@ -5,6 +5,7 @@ from .measurements import (
     get_last_json_serialization_record,
     get_last_external_api_call_record,
     get_last_inserted_to_database_record,
+    get_last_rendered_template_record,
 )
 import statistics
 
@@ -38,5 +39,11 @@ def get_last_external_api_call_execution_time(framework):
 
 def get_last_inserted_to_database_execution_time(framework, number_of_inserted):
     record = get_last_inserted_to_database_record(framework=framework, number_of_inserted=number_of_inserted)
+    if record is not None:
+        return convert_to_miliseconds(record.execution_time)
+
+
+def get_last_rendered_template_execution_time(framework, number_of_rendered):
+    record = get_last_rendered_template_record(framework=framework, number_of_rendered=number_of_rendered)
     if record is not None:
         return convert_to_miliseconds(record.execution_time)

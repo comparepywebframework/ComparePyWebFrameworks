@@ -78,3 +78,7 @@ def get_last_external_api_call_record(framework):
 
 def get_last_inserted_to_database_record(framework, number_of_inserted):
     return InsertingToDatabaseMeasurement.objects.filter(framework=framework, number_of_inserted=number_of_inserted).last()
+
+
+def get_last_rendered_template_record(framework, number_of_rendered):
+    return RenderingTemplateMeasurement.objects.filter(framework=framework, number_of_rendered=number_of_rendered).last()

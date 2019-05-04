@@ -1,9 +1,30 @@
 {% load i18n %}
 <div class="container">
-    <h3>{% trans "Average Time:" %}</h3>
     <div class="container">
         <h4><span class="badge badge-primary">{% trans "100 elements" %}</span></h4>
-        <p>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ number_of_records_100 }}</span></p>
+        <p>{% trans "Last measurement Flask" %}:
+                {% if measurements.last_100_execution_time_flask %}
+                <span class="badge badge-pill badge-info">{{ measurements.last_100_execution_time_flask }} ms</span>
+            </p>
+            {% else %}
+            <span class="badge badge-pill badge-info">- ms</span></p>
+            {% endif %}
+            <p>{% trans "Last measurement Django" %}:
+                {% if measurements.last_100_execution_time_django %}
+                <span class="badge badge-pill badge-info">{{ measurements.last_100_execution_time_django }} ms</span>
+            </p>
+            {% else %}
+            <span class="badge badge-pill badge-info">- ms</span></p>
+            {% endif %}
+            <p>{% trans "Last measurement Pyramid" %}:
+                {% if measurements.last_100_execution_time_pyramid %}
+                <span class="badge badge-pill badge-info">{{ measurements.last_100_execution_time_pyramid }}
+                    ms</span></p>
+            {% else %}
+            <span class="badge badge-pill badge-info">- ms</span></p>
+            {% endif %}
+        <h5>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ measurements.number_of_records_100 }}</span></h5>
+        <h3>{% trans "Average Time:" %}</h3>
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>
@@ -34,7 +55,28 @@
     </div>
     <div class="container">
         <h4><span class="badge badge-primary">{% trans "1000 elements" %}</span></h4>
-        <p>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ number_of_records_1000 }}</span></h>
+        <p>{% trans "Last measurement Flask" %}:
+                {% if measurements.last_1000_execution_time_flask %}
+                <span class="badge badge-pill badge-info">{{ measurements.last_1000_execution_time_flask }} ms</span>
+            </p>
+            {% else %}
+            <span class="badge badge-pill badge-info">- ms</span></p>
+            {% endif %}
+            <p>{% trans "Last measurement Django" %}:
+                {% if measurements.last_1000_execution_time_django %}
+                <span class="badge badge-pill badge-info">{{ measurements.last_1000_execution_time_django }} ms</span>
+            </p>
+            {% else %}
+            <span class="badge badge-pill badge-info">- ms</span></p>
+            {% endif %}
+            <p>{% trans "Last measurement Pyramid" %}:
+                {% if measurements.last_1000_execution_time_pyramid %}
+                <span class="badge badge-pill badge-info">{{ measurements.last_1000_execution_time_pyramid }}
+                    ms</span></p>
+            {% else %}
+            <span class="badge badge-pill badge-info">- ms</span></p>
+            {% endif %}
+        <h5>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ measurements.number_of_records_1000 }}</span></h5>
             <div class="card-deck">
                 <div class="card bg-light mb-3" style="max-width: 18rem;">
                     <div class="card-header">Flask</div>
@@ -65,7 +107,28 @@
     </div>
     <div class="container">
         <h4><span class="badge badge-primary">{% trans "10000 elements" %}</span></h4>
-        <p>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ number_of_records_10000 }}</span></p>
+        <p>{% trans "Last measurement Flask" %}:
+                {% if measurements.last_10000_execution_time_flask %}
+                <span class="badge badge-pill badge-info">{{ measurements.last_10000_execution_time_flask }} ms</span>
+            </p>
+            {% else %}
+            <span class="badge badge-pill badge-info">- ms</span></p>
+            {% endif %}
+            <p>{% trans "Last measurement Django" %}:
+                {% if measurements.last_10000_execution_time_django %}
+                <span class="badge badge-pill badge-info">{{ measurements.last_10000_execution_time_django }} ms</span>
+            </p>
+            {% else %}
+            <span class="badge badge-pill badge-info">- ms</span></p>
+            {% endif %}
+            <p>{% trans "Last measurement Pyramid" %}:
+                {% if measurements.last_10000_execution_time_pyramid %}
+                <span class="badge badge-pill badge-info">{{ measurements.last_10000_execution_time_pyramid }}
+                    ms</span></p>
+            {% else %}
+            <span class="badge badge-pill badge-info">- ms</span></p>
+            {% endif %}
+        <h5>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ measurements.number_of_records_10000 }}</span></h5>
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>

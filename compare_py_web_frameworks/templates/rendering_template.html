@@ -27,9 +27,9 @@
             </div>
         </div>
     </form>
-    {% if error_message %}
+    {% if errors.error_message %}
     <div class="alert alert-danger" role="alert">
-        {{ error_message }}
+        {{ errors.error_message }}
     </div>
     {% endif %}
 </div>
