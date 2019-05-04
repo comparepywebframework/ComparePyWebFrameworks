@@ -2,35 +2,118 @@
 {% block content %}
 {% load i18n %}
 <div class="container">
-    <div class="card-deck">
-        <div class="card" style="width: 18rem;">
-            {% load static %}
-            <img class="card-img-top" src="{% static 'images/flask_logo.png'%}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Flask</h5>
-                <p class="card-text">{% trans "Flask is a free open-source micro-framework created in 2004." %}</p><br>
-                <a href="{% url 'flask_info' %}" class="btn btn-primary">{% trans "Learn more" %}</a>
+    <div class="section-title">
+        <h1>{% trans "Benchmark Python Web Frameworks" %}</h1>
+        <p class="lead">
+            {% trans "On this website you can compare 3 most popular python web frameworks in following tests." %}</p>
+    </div>
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <!-- service-block -->
+            <div class="service-block">
+                <div class="service-icon">
+                    <a href="{% url 'rendering_template' %}" class="text-black"> <i class="fab fa-html5"></i></a>
+                </div>
+                <div class="service-content">
+                    <h4><a href="{% url 'rendering_template' %}" class="title">{% trans "Rendering HTML template" %}</a>
+                    </h4>
+                    <p>{% trans "Render same text in HTML template 100, 1000 or 10000 times."%}</p>
+                </div>
             </div>
+            <!-- /.service-block -->
         </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{% static 'images/django_logo.png'%}" style="background: black;"
-                alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Django</h5>
-                <p class="card-text">
-                    {% trans "Django is a free open-source framework for desigining complex web services created in 2005." %}
-                </p>
-                <a href="{% url 'django_info' %}" class="btn btn-primary">{% trans "Learn more" %}</a>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <!-- service-block -->
+            <div class="service-block">
+                <div class="service-icon">
+                    <a href="{% url 'inserting_to_database' %}" class="text-black"><i class="fas fa-database"></i></a>
+                </div>
+                <div class="service-content">
+                    <h4><a href="{% url 'inserting_to_database' %}"
+                            class="title">{% trans "Insert data to database" %}</a></h4>
+                    <p>{% trans "Insert sample data to database with each framework's ORM for 10, 50 or 100 records." %}
+                    </p>
+                </div>
             </div>
+            <!-- /.service-block -->
         </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{% static 'images/pyramid_logo.png'%}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Pyramid</h5>
-                <p class="card-text">{% trans "Pyramid is a free open-source micro-framework created in 2008. "%}</p><br>
-                <a href="{% url 'pyramid_info' %}" class="btn btn-primary">{% trans "Learn more" %}</a>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <!-- service-block -->
+            <div class="service-block">
+                <div class="service-icon">
+                    <a href="{% url 'external_api_call' %}" class="text-black"> <i class="fas fa-network-wired"></i></a>
+                </div>
+                <div class="service-content">
+                    <h4><a href="{% url 'external_api_call' %}" class="title">{% trans "External API call" %}</a></h4>
+                    <p>{% trans "Make request to OpenWeather API to collect data and return as response." %}</p>
+                </div>
             </div>
+            <!-- /.service-block -->
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <!-- service-block -->
+            <div class="service-block">
+                <div class="service-icon">
+                    <a href="{% url 'serialize_json' %}" class="text-black"> <i class="fas fa-file"></i></a>
+                </div>
+                <div class="service-content">
+                    <h4><a href="{% url 'serialize_json' %}" class="title">{% trans "Serialize JSON" %}</a></h4>
+                    <p>{% trans "Collect object from database and return as JSON response." %}</p>
+                </div>
+            </div>
+            <!-- /.service-block -->
         </div>
     </div>
+</div>
+<div class="container">
+
+<!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Flask</h2>
+            <p class="lead">{% trans "Flask is a free open-source micro-framework created in 2004." %}</p>
+            <a href="{% url 'flask_info' %}" class="btn btn-primary">{% trans "Learn more" %}</a>
+        </div>
+        <div class="col-md-5">
+            {% load static %}
+            <img class="feature-image" src="{% static 'images/flask_logo.png'%}">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Django</h2>
+            <p class="lead">{% trans "Django is a free open-source framework for desigining complex web services created in 2005." %}</p>
+            <a href="{% url 'django_info' %}" class="btn btn-primary">{% trans "Learn more" %}</a>
+            
+        </div>
+        <div class="col-md-5 order-md-1">
+            {% load static %}
+            <img class="feature-image" src="{% static 'images/django_logo.png'%}">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Pyramid</h2>
+            <p class="lead">{% trans "Pyramid is a free open-source micro-framework created in 2008. "%}</p>
+            <a href="{% url 'pyramid_info' %}" class="btn btn-primary">{% trans "Learn more" %}</a> 
+        </div>
+        <div class="col-md-5">
+            {% load static %}
+            <img class="feature-image" src="{% static 'images/pyramid_logo.png'%}">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+</div>
+<div class="section-title">
 </div>
 {% endblock %}

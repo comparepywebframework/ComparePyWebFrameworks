@@ -1,160 +1,211 @@
 {% load i18n %}
 <div class="container">
+    <hr class="measurements-section-divider">
+</div>
+<div class="container">
+    <h3 class="measurements-section-title">{% trans "Measurements" %}</h3>
+</div>
+<div class="container">
+    <hr class="measurements-section-divider">
+</div>
+<div class="container">
+    <h4>{% trans "100 elements" %}</h4>
+</div>
+<div class="container">
+    <p>{% trans "Last measurement Flask" %}:
+        {% if measurements.last_100_execution_time_flask %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_100_execution_time_flask }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Django" %}:
+        {% if measurements.last_100_execution_time_django %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_100_execution_time_django }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Pyramid" %}:
+        {% if measurements.last_100_execution_time_pyramid %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_100_execution_time_pyramid }}
+            ms</span></p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <h5>{% trans "Total measurements:" %}<span
+            class="badge badge-secondary">{{ measurements.number_of_records_100 }}</span></h5>
     <div class="container">
-        <h4><span class="badge badge-primary">{% trans "100 elements" %}</span></h4>
-        <p>{% trans "Last measurement Flask" %}:
-                {% if measurements.last_100_execution_time_flask %}
-                <span class="badge badge-pill badge-info">{{ measurements.last_100_execution_time_flask }} ms</span>
-            </p>
-            {% else %}
-            <span class="badge badge-pill badge-info">- ms</span></p>
-            {% endif %}
-            <p>{% trans "Last measurement Django" %}:
-                {% if measurements.last_100_execution_time_django %}
-                <span class="badge badge-pill badge-info">{{ measurements.last_100_execution_time_django }} ms</span>
-            </p>
-            {% else %}
-            <span class="badge badge-pill badge-info">- ms</span></p>
-            {% endif %}
-            <p>{% trans "Last measurement Pyramid" %}:
-                {% if measurements.last_100_execution_time_pyramid %}
-                <span class="badge badge-pill badge-info">{{ measurements.last_100_execution_time_pyramid }}
-                    ms</span></p>
-            {% else %}
-            <span class="badge badge-pill badge-info">- ms</span></p>
-            {% endif %}
-        <h5>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ measurements.number_of_records_100 }}</span></h5>
-        <h3>{% trans "Average Time:" %}</h3>
-        <div class="card-deck">
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Flask</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=4"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="container">
+        <h5 class="average-time-section-title">{% trans "Average Time" %}</h5>
+    </div>
+    <div class="container">
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="card-deck">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Flask</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=4"
+                    width="250" height="270" frameborder="0"></iframe>
             </div>
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Django</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=2"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Django</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=2"
+                    width="250" height="270" frameborder="0"></iframe>
             </div>
+        </div>
 
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Pyramid</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=8"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pyramid</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=8"
+                    width="250" height="270" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <hr class="featurette-divider">
+</div>
+<div class="container">
+    <h4>{% trans "1000 elements" %}</h4>
+</div>
+<div class="container">
+    <p>{% trans "Last measurement Flask" %}:
+        {% if measurements.last_1000_execution_time_flask %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_1000_execution_time_flask }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Django" %}:
+        {% if measurements.last_1000_execution_time_django %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_1000_execution_time_django }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Pyramid" %}:
+        {% if measurements.last_1000_execution_time_pyramid %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_1000_execution_time_pyramid }}
+            ms</span></p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <h5>{% trans "Total measurements:" %}<span
+            class="badge badge-secondary">{{ measurements.number_of_records_1000 }}</span></h5>
+    <div class="container">
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="container">
+        <h5 class="average-time-section-title">{% trans "Average Time" %}</h5>
+    </div>
+    <div class="container">
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="card-deck">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Flask</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=16"
+                    width="250" height="270" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Django</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=14"
+                    width="250" height="270" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pyramid</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=18"
+                    width="250" height="270" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <hr class="featurette-divider">
+</div>
+<div class="container">
+    <h4>{% trans "10000 elements" %}</h4>
+</div>
+<div class="container">
+    <p>{% trans "Last measurement Flask" %}:
+        {% if measurements.last_10000_execution_time_flask %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_10000_execution_time_flask }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Django" %}:
+        {% if measurements.last_10000_execution_time_django %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_10000_execution_time_django }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Pyramid" %}:
+        {% if measurements.last_10000_execution_time_pyramid %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_10000_execution_time_pyramid }}
+            ms</span></p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <h5>{% trans "Total measurements:" %}<span
+            class="badge badge-secondary">{{ measurements.number_of_records_10000 }}</span></h5>
+    <div class="container">
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="container">
+        <h5 class="average-time-section-title">{% trans "Average Time" %}</h5>
+    </div>
+    <div class="container">
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="card-deck">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Flask</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=24"
+                    width="250" height="270" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Django</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=22"
+                    width="250" height="270" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pyramid</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=26"
+                    width="250" height="270" frameborder="0"></iframe>
             </div>
         </div>
     </div>
     <div class="container">
-        <h4><span class="badge badge-primary">{% trans "1000 elements" %}</span></h4>
-        <p>{% trans "Last measurement Flask" %}:
-                {% if measurements.last_1000_execution_time_flask %}
-                <span class="badge badge-pill badge-info">{{ measurements.last_1000_execution_time_flask }} ms</span>
-            </p>
-            {% else %}
-            <span class="badge badge-pill badge-info">- ms</span></p>
-            {% endif %}
-            <p>{% trans "Last measurement Django" %}:
-                {% if measurements.last_1000_execution_time_django %}
-                <span class="badge badge-pill badge-info">{{ measurements.last_1000_execution_time_django }} ms</span>
-            </p>
-            {% else %}
-            <span class="badge badge-pill badge-info">- ms</span></p>
-            {% endif %}
-            <p>{% trans "Last measurement Pyramid" %}:
-                {% if measurements.last_1000_execution_time_pyramid %}
-                <span class="badge badge-pill badge-info">{{ measurements.last_1000_execution_time_pyramid }}
-                    ms</span></p>
-            {% else %}
-            <span class="badge badge-pill badge-info">- ms</span></p>
-            {% endif %}
-        <h5>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ measurements.number_of_records_1000 }}</span></h5>
-            <div class="card-deck">
-                <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Flask</div>
-                    <div class="card-body">
-                        <iframe
-                            src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=16"
-                            width="250" height="270" frameborder="0"></iframe>
-                    </div>
-                </div>
-                <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Django</div>
-                    <div class="card-body">
-                        <iframe
-                            src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=14"
-                            width="250" height="270" frameborder="0"></iframe>
-                    </div>
-                </div>
-
-                <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Pyramid</div>
-                    <div class="card-body">
-                        <iframe
-                            src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=18"
-                            width="250" height="270" frameborder="0"></iframe>
-                    </div>
-                </div>
-            </div>
     </div>
-    <div class="container">
-        <h4><span class="badge badge-primary">{% trans "10000 elements" %}</span></h4>
-        <p>{% trans "Last measurement Flask" %}:
-                {% if measurements.last_10000_execution_time_flask %}
-                <span class="badge badge-pill badge-info">{{ measurements.last_10000_execution_time_flask }} ms</span>
-            </p>
-            {% else %}
-            <span class="badge badge-pill badge-info">- ms</span></p>
-            {% endif %}
-            <p>{% trans "Last measurement Django" %}:
-                {% if measurements.last_10000_execution_time_django %}
-                <span class="badge badge-pill badge-info">{{ measurements.last_10000_execution_time_django }} ms</span>
-            </p>
-            {% else %}
-            <span class="badge badge-pill badge-info">- ms</span></p>
-            {% endif %}
-            <p>{% trans "Last measurement Pyramid" %}:
-                {% if measurements.last_10000_execution_time_pyramid %}
-                <span class="badge badge-pill badge-info">{{ measurements.last_10000_execution_time_pyramid }}
-                    ms</span></p>
-            {% else %}
-            <span class="badge badge-pill badge-info">- ms</span></p>
-            {% endif %}
-        <h5>{% trans "Total measurements:" %}<span class="badge badge-secondary">{{ measurements.number_of_records_10000 }}</span></h5>
-        <div class="card-deck">
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Flask</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=24"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
-            </div>
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Django</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=22"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
-            </div>
-
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Pyramid</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/HTFFSAzWz/template-rendering-time?orgId=1&theme=light&panelId=26"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 </div>

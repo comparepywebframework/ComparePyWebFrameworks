@@ -1,3 +1,18 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:focus,
+a:hover {
+    text-decoration: none;
+    color: #0e171c;
+}
+
+i {
+    color: #226597;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #096386;
@@ -6,9 +21,100 @@
 
 .btn-primary:hover {
     background-color: #0a6a8f;
-    border-color: #0a6a8f; 
+    border-color: #0a6a8f;
 }
 
 .navbar {
-    background-color: #87c0cd
+    background-color: #f3f9fb;
+}
+
+
+.service-block {
+    margin-bottom: 40px;
+}
+
+.service-icon {
+    font-size: 97px;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.text-black {
+    color: #0e171c;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+    margin: 5rem 0;
+    /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.05rem;
+}
+
+.featurette-heading {
+    font-size: 50px;
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
+
+.feature-image {
+    width: 440px;
+    height: 300px;
+}
+
+.container {
+    margin-top: 3%;
+}
+
+.page-footer {
+    background-color: #226597;
+}
+
+.footer-copyright {
+    color: #fff;
+}
+
+.page-body {
+    margin-bottom: 3%;
+}
+
+.page-title {
+    text-align: center;
+}
+
+.measurements-section-title {
+    text-align: center
+}
+
+.average-time-section-title {
+    text-align: center;
+}
+
+.measurements-section-divider {
+    margin: 2rem 0;
+}
+
+.average-time-section-divider {
+    margin: 1rem 0;
+}
+
+.card-deck {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
 }

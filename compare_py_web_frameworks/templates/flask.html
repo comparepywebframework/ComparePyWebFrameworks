@@ -2,7 +2,16 @@
 {% block content %}
 {% load i18n %}
 <div class="container">
-    <h1>Flask</h1>
+    <hr class="featurette-divider">
+</div>
+<div class="container">
+    <h1 class="page-title">Flask</h1>
+</div>
+<div class="container">
+    <hr class="featurette-divider">
+</div>
+<div class="container">
+
     <p>Flask jest to darmowy otwarto źródłowy mikro-framework powstały w 2004 roku. Flask jest klasyfikowany jako
         mikro-framework z uwagi na to, że do uruchomienia nie wymaga żadnych specjalnych narzędzi ani bibliotek.</p>
 
@@ -42,7 +51,7 @@
     <p>Przykładem tego jak niewiele kodu jest potrzebne do tego aby z użyciem tego oprogramowania stworzyć pełnoprawny
         serwer internetowy zdolny do zwracania odpowiedzi HTTP po wskazaniu konkretnego adresu URL jest kod widoczny
         ponizejna Rys 1.</p>
-    
+
     {% load static %}
     <img src="{% static 'images/flask-1.png' %}">
     <p>Rys 1. Przykładowy serwer stworzony z użyciem Flask </p>

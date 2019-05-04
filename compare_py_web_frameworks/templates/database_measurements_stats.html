@@ -1,85 +1,117 @@
 {% load i18n %}
 <div class="container">
+    <hr class="measurements-section-divider">
+</div>
+<div class="container">
+    <h3 class="measurements-section-title">{% trans "Measurements" %}</h3>
+</div>
+<div class="container">
+    <hr class="measurements-section-divider">
+</div>
+<div class="container">
+    <h4>{% trans "10 Records" %}</h4>
+</div>
+<div class="container">
+    <p>{% trans "Last measurement Flask" %}:
+        {% if measurements.last_10_records_execution_time_flask %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_10_records_execution_time_flask }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Django" %}:
+        {% if measurements.last_10_records_execution_time_django %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_10_records_execution_time_django }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Pyramid" %}:
+        {% if measurements.last_10_records_execution_time_pyramid %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_10_records_execution_time_pyramid }}
+            ms</span></p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <h5>{% trans "Total measurements:" %} <span
+            class="badge badge-secondary">{{ measurements.number_of_records_10 }}</span></h5>
     <div class="container">
-        <h4><span class="badge badge-primary">{% trans "10 Records" %}</span></h4>
-        <p>{% trans "Last measurement Flask" %}:
-            {% if measurements.last_10_records_execution_time_flask %}
-            <span class="badge badge-pill badge-info">{{ measurements.last_10_records_execution_time_flask }} ms</span>
-        </p>
-        {% else %}
-        <span class="badge badge-pill badge-info">- ms</span></p>
-        {% endif %}
-        <p>{% trans "Last measurement Django" %}:
-            {% if measurements.last_10_records_execution_time_django %}
-            <span class="badge badge-pill badge-info">{{ measurements.last_10_records_execution_time_django }} ms</span>
-        </p>
-        {% else %}
-        <span class="badge badge-pill badge-info">- ms</span></p>
-        {% endif %}
-        <p>{% trans "Last measurement Pyramid" %}:
-            {% if measurements.last_10_records_execution_time_pyramid %}
-            <span class="badge badge-pill badge-info">{{ measurements.last_10_records_execution_time_pyramid }}
-                ms</span></p>
-        {% else %}
-        <span class="badge badge-pill badge-info">- ms</span></p>
-        {% endif %}
-        <h5>{% trans "Total measurements:" %} <span
-                class="badge badge-secondary">{{ measurements.number_of_records_10 }}</span></h5>
-        <h3>{% trans "Average Time:" %}</h3>
-        <div class="card-deck">
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Flask</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=4"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="container">
+        <h5 class="average-time-section-title">{% trans "Average Time" %}</h5>
+    </div>
+    <div class="container">
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="card-deck">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Flask</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=4"
+                    width="250" height="270" frameborder="0"></iframe>
             </div>
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Django</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=6"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Django</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=6"
+                    width="250" height="270" frameborder="0"></iframe>
             </div>
+        </div>
 
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Pyramid</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=8"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pyramid</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=8"
+                    width="250" height="270" frameborder="0"></iframe>
             </div>
         </div>
     </div>
+</div>
+<div class="container">
+    <hr class="featurette-divider">
+</div>
+<div class="container">
+    <h4>{% trans "50 Records" %}</h4>
+</div>
+<div class="container">
+    <p>{% trans "Last measurement Flask" %}:
+        {% if measurements.last_50_records_execution_time_flask %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_50_records_execution_time_flask }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Django" %}:
+        {% if measurements.last_50_records_execution_time_django %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_50_records_execution_time_django }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Pyramid" %}:
+        {% if measurements.last_50_records_execution_time_pyramid %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_50_records_execution_time_pyramid }}
+            ms</span></p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <h5>{% trans "Total measurements:" %} <span class="badge badge-secondary">
+            {{ measurements.number_of_records_50 }}</span></h5>
     <div class="container">
-        <h4><span class="badge badge-primary">{% trans "50 Records" %}</span></h4>
-        <p>{% trans "Last measurement Flask" %}:
-            {% if measurements.last_50_records_execution_time_flask %}
-            <span class="badge badge-pill badge-info">{{ measurements.last_50_records_execution_time_flask }} ms</span>
-        </p>
-        {% else %}
-        <span class="badge badge-pill badge-info">- ms</span></p>
-        {% endif %}
-        <p>{% trans "Last measurement Django" %}:
-            {% if measurements.last_50_records_execution_time_django %}
-            <span class="badge badge-pill badge-info">{{ measurements.last_50_records_execution_time_django }} ms</span>
-        </p>
-        {% else %}
-        <span class="badge badge-pill badge-info">- ms</span></p>
-        {% endif %}
-        <p>{% trans "Last measurement Pyramid" %}:
-            {% if measurements.last_50_records_execution_time_pyramid %}
-            <span class="badge badge-pill badge-info">{{ measurements.last_50_records_execution_time_pyramid }}
-                ms</span></p>
-        {% else %}
-        <span class="badge badge-pill badge-info">- ms</span></p>
-        {% endif %}
-        <h5>{% trans "Total measurements:" %} <span class="badge badge-secondary">
-                {{ measurements.number_of_records_50 }}</span></h5>
-        <h3>{% trans "Average Time:" %}</h3>
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="container">
+        <h5 class="average-time-section-title">{% trans "Average Time" %}</h5>
+    </div>
+    <div class="container">
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="text-center">
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>
@@ -107,56 +139,69 @@
             </div>
         </div>
     </div>
+</div>
+<div class="container">
+    <hr class="featurette-divider">
+</div>
+<div class="container">
+    <h4>{% trans "100 Records" %}</h4>
+</div>
+<div class="container">
+    <p>{% trans "Last measurement Flask" %}:
+        {% if measurements.last_100_records_execution_time_flask %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_100_records_execution_time_flask }} ms</span>
+    </p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Django" %}:
+        {% if measurements.last_100_records_execution_time_django %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_100_records_execution_time_django }}
+            ms</span></p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <p>{% trans "Last measurement Pyramid" %}:
+        {% if measurements.last_100_records_execution_time_pyramid %}
+        <span class="badge badge-pill badge-info">{{ measurements.last_100_records_execution_time_pyramid }}
+            ms</span></p>
+    {% else %}
+    <span class="badge badge-pill badge-info">- ms</span></p>
+    {% endif %}
+    <h5>{% trans "Total measurements:" %} <span class="badge badge-secondary">
+            {{ measurements.number_of_records_100 }}</span></h5>
     <div class="container">
-        <h4><span class="badge badge-primary">{% trans "100 Records" %}</span></h4>
-        <p>{% trans "Last measurement Flask" %}:
-            {% if measurements.last_100_records_execution_time_flask %}
-            <span class="badge badge-pill badge-info">{{ measurements.last_100_records_execution_time_flask }} ms</span>
-        </p>
-        {% else %}
-        <span class="badge badge-pill badge-info">- ms</span></p>
-        {% endif %}
-        <p>{% trans "Last measurement Django" %}:
-            {% if measurements.last_100_records_execution_time_django %}
-            <span class="badge badge-pill badge-info">{{ measurements.last_100_records_execution_time_django }}
-                ms</span></p>
-        {% else %}
-        <span class="badge badge-pill badge-info">- ms</span></p>
-        {% endif %}
-        <p>{% trans "Last measurement Pyramid" %}:
-            {% if measurements.last_100_records_execution_time_pyramid %}
-            <span class="badge badge-pill badge-info">{{ measurements.last_100_records_execution_time_pyramid }}
-                ms</span></p>
-        {% else %}
-        <span class="badge badge-pill badge-info">- ms</span></p>
-        {% endif %}
-        <h5>{% trans "Total measurements:" %} <span class="badge badge-secondary">
-                {{ measurements.number_of_records_100 }}</span></h5>
-        <h3>{% trans "Average Time:" %}</h3>
-        <div class="card-deck">
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Flask</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=20"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="container">
+        <h5 class="average-time-section-title">{% trans "Average Time" %}</h5>
+    </div>
+    <div class="container">
+        <hr class="average-time-section-divider">
+    </div>
+    <div class="card-deck">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Flask</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=20"
+                    width="250" height="270" frameborder="0"></iframe>
             </div>
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Django</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=22"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Django</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=22"
+                    width="250" height="270" frameborder="0"></iframe>
             </div>
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">Pyramid</div>
-                <div class="card-body">
-                    <iframe
-                        src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=24"
-                        width="250" height="270" frameborder="0"></iframe>
-                </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pyramid</div>
+            <div class="card-body">
+                <iframe
+                    src="http://104.248.41.176:3000/d-solo/2qtqdAzZz/inserting-to-database-time?orgId=1&theme=light&panelId=24"
+                    width="250" height="270" frameborder="0"></iframe>
             </div>
         </div>
     </div>
