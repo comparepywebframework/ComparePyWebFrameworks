@@ -4,7 +4,7 @@
 <div class="container">
     <form class="form-submit" action="{% url 'record_json_serialization' %}" method="post">
         {% csrf_token %}
-        <h2>{% trans "Serialize JSON" %}</h2>
+        <h2>{% trans "Serialize JSON" %} <i class="fas fa-file"></i></h2>
         <p>{% trans "Serialize sample JSON object and return as response" %}</p>
         <p>{% trans "Sample Object:" %}</p>
         <table class="table table-bordered">
@@ -32,9 +32,9 @@
             <button type="submit" class="btn btn-primary">{% trans "Serialize JSON" %}</button>
         </div>
     </form>
-    {% if error_message %}
+    {% if errors.error_message %}
     <div class="alert alert-danger" role="alert">
-        {{ error_message }}
+        {{ errors.error_message }}
     </div>
     {% endif %}
 </div>

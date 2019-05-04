@@ -1,15 +1,27 @@
 {% load i18n %}
 <div class="container">
-    <h3>{% trans "Average Time:" %}</h3>
     <div class="container">
-        <p>{% trans "Last measurement Flask"%}: <span
-                class="badge badge-pill badge-info">{{ measurements.last_execution_time_flask }} ms</span></p>
-        <p>{% trans "Last measurement Django"%}: <span
-                class="badge badge-pill badge-info">{{ measurements.last_execution_time_django }} ms</span></p>
-        <p>{% trans "Last measurement Pyramid"%}: <span
-                class="badge badge-pill badge-info">{{ measurements.last_execution_time_pyramid }} ms</span></p>
+        <p>{% trans "Last measurement Flask" %}:
+            {% if measurements.last_execution_time_flask %}
+            <span class="badge badge-pill badge-info">{{ measurements.last_execution_time_flask }} ms</span></p>
+        {% else %}
+        <span class="badge badge-pill badge-info">- ms</span></p>
+        {% endif %}
+        <p>{% trans "Last measurement Django" %}:
+            {% if measurements.last_execution_time_django %}
+            <span class="badge badge-pill badge-info">{{ measurements.last_execution_time_django }} ms</span></p>
+        {% else %}
+        <span class="badge badge-pill badge-info">- ms</span></p>
+        {% endif %}
+        <p>{% trans "Last measurement Pyramid" %}:
+            {% if measurements.last_execution_time_pyramid %}
+            <span class="badge badge-pill badge-info">{{ measurements.last_execution_time_pyramid }} ms</span></p>
+        {% else %}
+        <span class="badge badge-pill badge-info">- ms</span></p>
+        {% endif %}
         <p>{% trans "Total measurements:" %} <span
-                class="badge badge-secondary">{{ measurements.total_measurements }}</span></p>
+            class="badge badge-secondary">{{ measurements.total_measurements }}</span></p>
+        <h3>{% trans "Average Time:" %}</h3>
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>

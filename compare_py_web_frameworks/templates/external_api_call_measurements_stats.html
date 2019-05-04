@@ -1,20 +1,41 @@
 {% load i18n %}
 <div class="container">
-    <h3>{% trans "Average Time:" %}</h3>
     <div class="container">
-        <p>{% trans "Total measurements:" %} <span class="badge badge-secondary">{{ total_measurements }}</span></p>
+        <p>{% trans "Last measurement Flask" %}:
+            {% if measurements.last_execution_time_flask %}
+            <span class="badge badge-pill badge-info">{{ measurements.last_execution_time_flask }} ms</span></p>
+        {% else %}
+        <span class="badge badge-pill badge-info">- ms</span></p>
+        {% endif %}
+        <p>{% trans "Last measurement Django" %}:
+            {% if measurements.last_execution_time_django %}
+            <span class="badge badge-pill badge-info">{{ measurements.last_execution_time_django }} ms</span></p>
+        {% else %}
+        <span class="badge badge-pill badge-info">- ms</span></p>
+        {% endif %}
+        <p>{% trans "Last measurement Pyramid" %}:
+            {% if measurements.last_execution_time_pyramid %}
+            <span class="badge badge-pill badge-info">{{ measurements.last_execution_time_pyramid }} ms</span></p>
+        {% else %}
+        <span class="badge badge-pill badge-info">- ms</span></p>
+        {% endif %}
+        <p>{% trans "Total measurements:" %} <span
+                class="badge badge-secondary">{{ measurements.total_measurements }}</span></p>
+        <h3>{% trans "Average Time:" %}</h3>        
         <div class="card-deck">
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Flask</div>
                 <div class="card-body">
-                    <iframe src="http://104.248.41.176:3000/d-solo/WHm1mUzWz/external-api-call?orgId=1&theme=light&panelId=4"
+                    <iframe
+                        src="http://104.248.41.176:3000/d-solo/WHm1mUzWz/external-api-call?orgId=1&theme=light&panelId=4"
                         width="250" height="270" frameborder="0"></iframe>
                 </div>
             </div>
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Django</div>
                 <div class="card-body">
-                    <iframe src="http://104.248.41.176:3000/d-solo/WHm1mUzWz/external-api-call?orgId=1&theme=light&panelId=6"
+                    <iframe
+                        src="http://104.248.41.176:3000/d-solo/WHm1mUzWz/external-api-call?orgId=1&theme=light&panelId=6"
                         width="250" height="270" frameborder="0"></iframe>
                 </div>
             </div>
@@ -22,7 +43,8 @@
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">Pyramid</div>
                 <div class="card-body">
-                    <iframe src="http://104.248.41.176:3000/d-solo/WHm1mUzWz/external-api-call?orgId=1&theme=light&panelId=8"
+                    <iframe
+                        src="http://104.248.41.176:3000/d-solo/WHm1mUzWz/external-api-call?orgId=1&theme=light&panelId=8"
                         width="250" height="270" frameborder="0"></iframe>
                 </div>
             </div>

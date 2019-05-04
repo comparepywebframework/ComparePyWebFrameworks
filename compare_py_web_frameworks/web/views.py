@@ -21,7 +21,11 @@ from .measurements import (
     get_all_json_serialization_measurements_number,
 )
 
-from .measurement_helpers import get_last_execution_time
+from .measurement_helpers import (
+    get_last_json_serialization_execution_time,
+    get_last_external_api_call_execution_time,
+    get_last_inserted_to_database_execution_time
+)
 
 
 def index(request):
@@ -101,27 +105,38 @@ def inserting_to_database(request):
     number_of_records_10 = get_all_inserted_measurements_number(number_of_records=10)
     number_of_records_50 = get_all_inserted_measurements_number(number_of_records=50)
     number_of_records_100 = get_all_inserted_measurements_number(number_of_records=100)
+    last_10_records_execution_time_flask = get_last_inserted_to_database_execution_time("flask", 10)
+    last_10_records_execution_time_django = get_last_inserted_to_database_execution_time("django", 10)
+    last_10_records_execution_time_pyramid = get_last_inserted_to_database_execution_time("pyramid", 10)
+    last_50_records_execution_time_flask = get_last_inserted_to_database_execution_time("flask", 50)
+    last_50_records_execution_time_django = get_last_inserted_to_database_execution_time("django", 50)
+    last_50_records_execution_time_pyramid = get_last_inserted_to_database_execution_time("pyramid", 50)
+    last_100_records_execution_time_flask = get_last_inserted_to_database_execution_time("flask", 100)
+    last_100_records_execution_time_django = get_last_inserted_to_database_execution_time("django", 100)
+    last_100_records_execution_time_pyramid = get_last_inserted_to_database_execution_time("pyramid", 100)
+    measurements = {
+            "number_of_records_10": number_of_records_10,
+            "number_of_records_50": number_of_records_50,
+            "number_of_records_100": number_of_records_100,
+            "last_10_records_execution_time_flask": last_10_records_execution_time_flask,
+            "last_10_records_execution_time_django": last_10_records_execution_time_django,
+            "last_10_records_execution_time_pyramid": last_10_records_execution_time_pyramid, 
+            "last_50_records_execution_time_flask": last_50_records_execution_time_flask, 
+            "last_50_records_execution_time_django": last_50_records_execution_time_django, 
+            "last_50_records_execution_time_pyramid": last_50_records_execution_time_pyramid, 
+            "last_100_records_execution_time_flask": last_100_records_execution_time_flask,
+            "last_100_records_execution_time_django": last_100_records_execution_time_django,
+            "last_100_records_execution_time_pyramid": last_100_records_execution_time_pyramid, 
+    } 
     if request.session.get("error_message", False):
         request.session["error_message"] = False
         return render(
             request,
             "inserting_to_database.html",
-            {
-                "number_of_records_10": number_of_records_10,
-                "number_of_records_50": number_of_records_50,
-                "number_of_records_100": number_of_records_100,
-                "error_message": ErrorMessage.CONNECTION_ERROR.value,
-            },
+            {"measurements": measurements, "errors": errors },
         )
     return render(
-        request,
-        "inserting_to_database.html",
-        {
-            "number_of_records_10": number_of_records_10,
-            "number_of_records_50": number_of_records_50,
-            "number_of_records_100": number_of_records_100,
-        },
-    )
+        request, "inserting_to_database.html", {"measurements": measurements},)
 
 
 @require_POST
@@ -152,19 +167,23 @@ def record_inserting_to_database(request):
 
 def external_api_call(request):
     total_measurements = get_all_external_api_call_measurements_number()
+    last_execution_time_flask = get_last_external_api_call_execution_time("flask")
+    last_execution_time_django = get_last_external_api_call_execution_time("django")
+    last_execution_time_pyramid = get_last_external_api_call_execution_time("pyramid")
+    measurements = {
+        "total_measurements": total_measurements,
+        "last_execution_time_flask": last_execution_time_flask,
+        "last_execution_time_django": last_execution_time_django,
+        "last_execution_time_pyramid": last_execution_time_pyramid,
+    }
     if request.session.get("error_message", False):
         request.session["error_message"] = False
         return render(
             request,
             "external_api_call.html",
-            {
-                "total_measurements": total_measurements,
-                "error_message": ErrorMessage.CONNECTION_ERROR.value,
-            },
+            {"measurements": measurements, "errors": errors},
         )
-    return render(
-        request, "external_api_call.html", {"total_measurements": total_measurements}
-    )
+    return render(request, "external_api_call.html", {"measurements": measurements})
 
 
 @require_POST
@@ -183,9 +202,9 @@ def record_external_api_call(request):
 
 def serialize_json(request):
     total_measurements = get_all_json_serialization_measurements_number()
-    last_executon_time_django = get_last_execution_time("django")
-    last_executon_time_flask = get_last_execution_time("flask")
-    last_executon_time_pyramid = get_last_execution_time("pyramid")
+    last_executon_time_django = get_last_json_serialization_execution_time("django")
+    last_executon_time_flask = get_last_json_serialization_execution_time("flask")
+    last_executon_time_pyramid = get_last_json_serialization_execution_time("pyramid")
     measurements = {
         "total_measurements": total_measurements,
         "last_execution_time_flask": last_executon_time_flask,
@@ -199,9 +218,7 @@ def serialize_json(request):
             "serialize_json.html",
             {"measurements": measurements, "errors": errors},
         )
-    return render(
-        request, "serialize_json.html", {"measurements": measurements, "errors": errors}
-    )
+    return render(request, "serialize_json.html", {"measurements": measurements})
 
 
 @require_POST

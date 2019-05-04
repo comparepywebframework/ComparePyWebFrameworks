@@ -70,3 +70,11 @@ def get_all_json_serialization_measurements_number():
 
 def get_last_json_serialization_record(framework):
     return JSONSerializationMeasurement.objects.filter(framework=framework).last()
+
+
+def get_last_external_api_call_record(framework):
+    return ExternalApiCallMeasurement.objects.filter(framework=framework).last()
+
+
+def get_last_inserted_to_database_record(framework, number_of_inserted):
+    return InsertingToDatabaseMeasurement.objects.filter(framework=framework, number_of_inserted=number_of_inserted).last()

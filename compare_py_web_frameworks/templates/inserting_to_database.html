@@ -4,7 +4,7 @@
 <div class="container">
     <form class="form-submit" action="{% url 'record_inserting_to_database' %}" method="post">
         {% csrf_token %}
-        <h2>{% trans "Inserting objects to database" %}</h2>
+        <h2>{% trans "Inserting objects to database" %} <i class="fas fa-database"></i></h2>
         <p>{% trans "Sample Object:" %}</p>
         <table class="table table-bordered">
             <thead>
@@ -42,9 +42,9 @@
             <button type="submit" class="btn btn-primary">{% trans "Insert" %}</button>
         </div>
     </form>
-    {% if error_message %}
+    {% if errors.error_message %}
     <div class="alert alert-danger" role="alert">
-        {{ error_message }}
+        {{ errors.error_message }}
     </div>
     {% endif %}
 </div>
