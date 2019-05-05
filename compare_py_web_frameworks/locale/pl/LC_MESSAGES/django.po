@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-02 17:14+0200\n"
+"POT-Creation-Date: 2019-05-05 10:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: templates/base.html:20
 msgid "ComparePyWebFrameworks"
-msgstr "PorównajWebFrameworkiPythona"
+msgstr "PorównajFrameworkiWebPythona"
 
 #: templates/base.html:28
 msgid "Rendering Template"
@@ -32,46 +32,98 @@ msgstr "Renderowanie szablonu"
 msgid "Inserting to database"
 msgstr "Wprowadzanie danych do bazy danych"
 
-#: templates/base.html:30 templates/external_api_call.html:7
+#: templates/base.html:30 templates/external_api_call.html:10
 msgid "External API Call"
 msgstr "Wywołanie zewnętrznego API"
 
-#: templates/base.html:31 templates/serialize_json.html:7
-#: templates/serialize_json.html:32
+#: templates/base.html:31 templates/index.html:60
+#: templates/serialize_json.html:10 templates/serialize_json.html:38
 msgid "Serialize JSON"
-msgstr "Serializuj JSON"
-
-#: templates/database_measurements_stats.html:3
-#: templates/external_api_call_measurements_stats.html:3
-#: templates/json_serialization_measurements_stats.html:3
-#: templates/rendering_template_measurements_stats.html:3
-msgid "Average Time:"
-msgstr "Średni czas"
-
-#: templates/database_measurements_stats.html:5
-msgid "10 Records"
-msgstr "10 rekordów"
+msgstr "Serializacja JSON"
 
 #: templates/database_measurements_stats.html:6
-#: templates/database_measurements_stats.html:37
-#: templates/database_measurements_stats.html:67
 #: templates/external_api_call_measurements_stats.html:5
 #: templates/json_serialization_measurements_stats.html:5
 #: templates/rendering_template_measurements_stats.html:6
-#: templates/rendering_template_measurements_stats.html:37
-#: templates/rendering_template_measurements_stats.html:68
-msgid "Total measurements:"
+#, fuzzy
+#| msgid "Total measurements:"
+msgid "Measurements"
+msgstr "Całkowita liczba pomiarów:"
+
+#: templates/database_measurements_stats.html:12
+msgid "10 Records"
+msgstr "10 rekordów"
+
+#: templates/database_measurements_stats.html:15
+#: templates/database_measurements_stats.html:82
+#: templates/database_measurements_stats.html:150
+#: templates/external_api_call_measurements_stats.html:10
+#: templates/json_serialization_measurements_stats.html:10
+#: templates/rendering_template_measurements_stats.html:15
+#: templates/rendering_template_measurements_stats.html:82
+#: templates/rendering_template_measurements_stats.html:149
+#, fuzzy
+#| msgid "Total measurements:"
+msgid "Last measurement Flask"
+msgstr "Całkowita liczba pomiarów:"
+
+#: templates/database_measurements_stats.html:22
+#: templates/database_measurements_stats.html:89
+#: templates/database_measurements_stats.html:157
+#: templates/external_api_call_measurements_stats.html:16
+#: templates/json_serialization_measurements_stats.html:16
+#: templates/rendering_template_measurements_stats.html:22
+#: templates/rendering_template_measurements_stats.html:89
+#: templates/rendering_template_measurements_stats.html:156
+#, fuzzy
+#| msgid "Total measurements:"
+msgid "Last measurement Django"
+msgstr "Całkowita liczba pomiarów:"
+
+#: templates/database_measurements_stats.html:29
+#: templates/database_measurements_stats.html:96
+#: templates/database_measurements_stats.html:164
+#: templates/external_api_call_measurements_stats.html:22
+#: templates/json_serialization_measurements_stats.html:22
+#: templates/rendering_template_measurements_stats.html:29
+#: templates/rendering_template_measurements_stats.html:96
+#: templates/rendering_template_measurements_stats.html:163
+#, fuzzy
+#| msgid "Total measurements:"
+msgid "Last measurement Pyramid"
 msgstr "Całkowita liczba pomiarów:"
 
 #: templates/database_measurements_stats.html:36
+#: templates/database_measurements_stats.html:103
+#: templates/database_measurements_stats.html:171
+#: templates/external_api_call_measurements_stats.html:28
+#: templates/json_serialization_measurements_stats.html:28
+#: templates/rendering_template_measurements_stats.html:36
+#: templates/rendering_template_measurements_stats.html:103
+#: templates/rendering_template_measurements_stats.html:170
+msgid "Total measurements:"
+msgstr "Całkowita liczba pomiarów:"
+
+#: templates/database_measurements_stats.html:42
+#: templates/database_measurements_stats.html:109
+#: templates/database_measurements_stats.html:177
+#: templates/rendering_template_measurements_stats.html:42
+#: templates/rendering_template_measurements_stats.html:109
+#: templates/rendering_template_measurements_stats.html:176
+#, fuzzy
+#| msgid "Average Time:"
+msgid "Average Time"
+msgstr "Średni czas"
+
+#: templates/database_measurements_stats.html:79
 msgid "50 Records"
 msgstr "50 Rekordów"
 
-#: templates/database_measurements_stats.html:66
+#: templates/database_measurements_stats.html:147
 msgid "100 Records"
 msgstr "100 Rekordów"
 
-#: templates/external_api_call.html:8
+#: templates/external_api_call.html:14
 msgid ""
 "Make request to external API (https://openweathermap.org) to get weather "
 "forecast for Katowice and return response"
@@ -79,72 +131,133 @@ msgstr ""
 "Wyślij żądanie do zewnętrznego API (https://openweathermap.org) w celu "
 "pobrania prognozy pogody dla Katowic i zwróć jako odpowiedź"
 
-#: templates/external_api_call.html:11
+#: templates/external_api_call.html:18
 msgid "Make Request"
 msgstr "Wyślij żądanie"
 
-#: templates/index.html:11
-msgid "Flask is a free open-source micro-framework created in 2004."
-msgstr "Flask jest darmowym otwarto źródłowym mikro-frameworkiem stworzonym w 2004 roku"
+#: templates/external_api_call_measurements_stats.html:30
+#: templates/json_serialization_measurements_stats.html:30
+msgid "Average Time:"
+msgstr "Średni czas"
 
-#: templates/index.html:12 templates/index.html:23 templates/index.html:31
-msgid "Learn more"
-msgstr "Dowiedz się więcej"
+#: templates/index.html:6
+#, fuzzy
+#| msgid "ComparePyWebFrameworks"
+msgid "Benchmark Python Web Frameworks"
+msgstr "PorównajWebFrameworkiPythona"
 
-#: templates/index.html:21
+#: templates/index.html:8
 msgid ""
-"Django is a free open-source framework for desigining complex web services "
-"created in 2005."
-msgstr "Django jest darmowym otwarto źródłowym frameworkiem przeznaczonym do tworzenia złozonych serwisów internetowych stworzonym w 2005 roku"
+"On this website you can compare 3 most popular python web frameworks in "
+"following tests."
+msgstr "Na tej stronie możesz porównać 3 najpopularniesznie frameworki web dla języka python w następujących testach."
 
-#: templates/index.html:30
-msgid "Pyramid is a free open-source micro-framework created in 2008. "
-msgstr "Pyramid jest darmowym otwarto źródłowym mikro-frameworkiem stworzonym w 2008 roku"
-
-#: templates/inserting_to_database.html:7
-msgid "Inserting objects to database"
-msgstr "Wprowadzanie obiektów do bazy danych"
-
-#: templates/inserting_to_database.html:8 templates/serialize_json.html:9
-msgid "Sample Object:"
-msgstr "Przykładowy obiekt"
-
-#: templates/inserting_to_database.html:35 templates/rendering_template.html:11
-msgid "How many times?"
-msgstr "Ile razy?"
-
-#: templates/inserting_to_database.html:42
-msgid "Insert"
-msgstr "Wprowadź"
-
-#: templates/rendering_template.html:7
+#: templates/index.html:18 templates/rendering_template.html:11
 msgid "Rendering HTML template"
 msgstr "Renderowanie szablonu HTML"
 
-#: templates/rendering_template.html:8
+#: templates/index.html:20
+msgid "Render same text in HTML template 100, 1000 or 10000 times."
+msgstr "Wyrenderuj ten sam tekst w szablonie HTML 100, 1000 lub 10000 razy"
+
+#: templates/index.html:33
+#, fuzzy
+#| msgid "Inserting to database"
+msgid "Insert data to database"
+msgstr "Wprowadzanie danych do bazy danych"
+
+#: templates/index.html:34
+msgid ""
+"Insert sample data to database with each framework's ORM for 10, 50 or 100 "
+"records."
+msgstr "Wprowadź testowe dane do bazy danych z użyciem ORM danego frameworka dla 10, 50 lub 100 rekordów"
+
+#: templates/index.html:47
+#, fuzzy
+#| msgid "External API Call"
+msgid "External API call"
+msgstr "Wywołanie zewnętrznego API"
+
+#: templates/index.html:48
+#, fuzzy
+#| msgid ""
+#| "Make request to external API (https://openweathermap.org) to get weather "
+#| "forecast for Katowice and return response"
+msgid "Make request to OpenWeather API to collect data and return as response."
+msgstr ""
+"Wyślij żądanie do zewnętrznego API (https://openweathermap.org) w celu "
+"pobrania prognozy pogody dla Katowic i zwróć jako odpowiedź"
+
+#: templates/index.html:61
+#, fuzzy
+#| msgid "Serialize sample JSON object and return as response"
+msgid "Collect object from database and return as JSON response."
+msgstr "Serializuj przykładowy obiekt JSON i zwróć jako odpowiedź"
+
+#: templates/index.html:75
+msgid "Flask is a free open-source micro-framework created in 2004."
+msgstr ""
+"Flask jest darmowym otwarto źródłowym mikro-frameworkiem stworzonym w 2004 "
+"roku"
+
+#: templates/index.html:76 templates/index.html:90 templates/index.html:105
+msgid "Learn more"
+msgstr "Dowiedz się więcej"
+
+#: templates/index.html:89
+msgid ""
+"Django is a free open-source framework for desigining complex web services "
+"created in 2005."
+msgstr ""
+"Django jest darmowym otwarto źródłowym frameworkiem przeznaczonym do "
+"tworzenia złozonych serwisów internetowych stworzonym w 2005 roku"
+
+#: templates/index.html:104
+msgid "Pyramid is a free open-source micro-framework created in 2008. "
+msgstr ""
+"Pyramid jest darmowym otwarto źródłowym mikro-frameworkiem stworzonym w 2008 "
+"roku"
+
+#: templates/inserting_to_database.html:11
+msgid "Inserting objects to database"
+msgstr "Wprowadzanie obiektów do bazy danych"
+
+#: templates/inserting_to_database.html:17 templates/serialize_json.html:15
+msgid "Sample Object:"
+msgstr "Przykładowy obiekt"
+
+#: templates/inserting_to_database.html:44 templates/rendering_template.html:18
+msgid "How many times?"
+msgstr "Ile razy?"
+
+#: templates/inserting_to_database.html:51
+msgid "Insert"
+msgstr "Wprowadź"
+
+#: templates/rendering_template.html:15
 msgid "Rendering same paragraph specified number of times"
 msgstr "Renderowanie tego samego paragrafu wybraną liczbę razy"
 
-#: templates/rendering_template.html:22
+#: templates/rendering_template.html:29
 msgid "Basic Text"
 msgstr "Przykładowy tekst"
 
-#: templates/rendering_template.html:26
+#: templates/rendering_template.html:33
 msgid "Render"
 msgstr "Renderuj"
 
-#: templates/rendering_template_measurements_stats.html:5
+#: templates/rendering_template_measurements_stats.html:12
 msgid "100 elements"
 msgstr "100 elementów"
 
-#: templates/rendering_template_measurements_stats.html:36
+#: templates/rendering_template_measurements_stats.html:79
 msgid "1000 elements"
 msgstr "1000 elementów"
 
-#: templates/rendering_template_measurements_stats.html:67
+#: templates/rendering_template_measurements_stats.html:146
 msgid "10000 elements"
 msgstr "10000 elementów"
 
-#: templates/serialize_json.html:8
+#: templates/serialize_json.html:14
 msgid "Serialize sample JSON object and return as response"
 msgstr "Serializuj przykładowy obiekt JSON i zwróć jako odpowiedź"

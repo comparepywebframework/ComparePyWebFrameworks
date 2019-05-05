@@ -2,29 +2,27 @@
 {% block content %}
 {% load i18n %}
 <div class="container">
-        <hr class="featurette-divider">
-    </div>
-    <div class="container">
-        <h1 class="page-title">Pyramid</h1>
-    </div>
-    <div class="container">
-        <hr class="featurette-divider">
-    </div>
+    <hr class="featurette-divider">
+</div>
 <div class="container">
-    <p>Pyramid jest to darmowy otwartoźródłowy mikro-framework stworzony w 2008 roku. Programiści pracujący nad
-        produkcją tego oprogramowania inspirowali się Django.</p>
+    <h1 class="page-title">Pyramid</h1>
+</div>
+<div class="container">
+    <hr class="featurette-divider">
+</div>
+<div class="container">
+    <p>{% trans "Pyramid jest to darmowy otwartoźródłowy mikro-framework stworzony w 2008 roku. Programiści pracujący nad produkcją tego oprogramowania inspirowali się Django." %}</p>
 
-    <p>W swojej podstawowej wersji podobnie jak Flask udostępnia jedynie najważniejsze funkcjonalności. Może on
-        komunikować się z relacyjnymi bazami danych za pomocą SQLAlchemy lub z bazami NoSQL jak na przykład InfluxDB lub
-        CouchDB [23]</p>
+    <p>{% trans "W swojej podstawowej wersji podobnie jak Flask udostępnia jedynie najważniejsze funkcjonalności. Może onkomunikować się z relacyjnymi bazami danych za pomocą SQLAlchemy lub z bazami NoSQL jak na przykład InfluxDB lub CouchDB" %}</p>
 
-    <p>Podobnie jak Flask posiada on wsparcie dla rozszerzeń tworzonych przez społeczność.</p>
+    <p>{% trans "Podobnie jak Flask posiada on wsparcie dla rozszerzeń tworzonych przez społeczność." %}</p>
 
-    <p>Podstawowy widok będący pełnoprawnym serwerem HTTP zwracającym poprawną odpowiedź regując na żądanie wysłane pod
-        wskazany adres widoczne jest na Rys 1.</p>
+    <p>{% trans "Podstawowy widok będący pełnoprawnym serwerem HTTP zwracającym poprawną odpowiedź regując na żądanie wysłane pod wskazany adres widoczne jest na Rys 1." %}</p>
 
     {% load static %}
-    <img src="{% static 'images/pyramid-1.png' %}">
-    <p>Rys 1. Przykładowy serwer stworzony z użyciem Pyramid</p>
+    <div class="container">
+        <img class="center" src="{% static 'images/pyramid-1.png' %}">
+    </div>
+    <p class="text-center">{% trans "Rys 1. Przykładowy serwer stworzony z użyciem Pyramid" %}</p>
 </div>
 {% endblock %}
