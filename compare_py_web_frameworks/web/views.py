@@ -15,22 +15,12 @@ from .measurements import (
     record_inserting_to_database_time,
     record_json_serialization_time,
     record_external_api_call_time,
-    get_all_rendered_measurements_number,
-    get_all_inserted_measurements_number,
-    get_all_external_api_call_measurements_number,
-    get_all_json_serialization_measurements_number,
 )
-
-from .measurement_helpers import (
-    get_last_json_serialization_execution_time,
-    get_last_external_api_call_execution_time,
-    get_last_inserted_to_database_execution_time,
-)
-
-from .contexts.external_api_call_context import get_external_api_call_measurements 
+from .contexts.external_api_call_context import get_external_api_call_measurements
 from .contexts.database_context import get_database_measurements
-from .contexts.serialize_json_context import get_serialize_json_measurements 
+from .contexts.serialize_json_context import get_serialize_json_measurements
 from .contexts.render_template_context import get_render_template_measurements
+from django.utils.translation import activate
 
 
 def index(request):
@@ -47,6 +37,16 @@ def django_info(request):
 
 def pyramid_info(request):
     return render(request, "pyramid.html")
+
+
+def activate_pl_lang(request):
+    activate("pl")
+    return redirect("index")
+
+
+def activate_en_lang(request):
+    activate("en")
+    return redirect("index")
 
 
 def rendering_template(request):

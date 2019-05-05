@@ -5,58 +5,46 @@
     <hr class="featurette-divider">
 </div>
 <div class="container">
-    <h1 class="page-title">Flask</h1>
+    <h1 class="page-title">{% block title %}Flask{% endblock %}</h1>
 </div>
 <div class="container">
     <hr class="featurette-divider">
 </div>
 <div class="container">
+        <h2><a href="http://flask.pocoo.org" class="badge badge-info">flask.pocoo.org</a><h2>
+</div>
+<div class="container">
+    <p>{% trans "Flask is a free open source micro-framework created in 2004. Flask is classified as micro-framework, it doesn't need any special tools or libraries to launch." %}</p>
 
-    <p>Flask jest to darmowy otwarto źródłowy mikro-framework powstały w 2004 roku. Flask jest klasyfikowany jako
-        mikro-framework z uwagi na to, że do uruchomienia nie wymaga żadnych specjalnych narzędzi ani bibliotek.</p>
+    <p>{% trans "In 2012 one of the biggest social networks for posting pictures Pinterest moved it's API which was originally based on Django to Flask. Pinterest can manage to serve over 10 billions HTTP requests per day only with this software." %}</p>
 
-    <p>W 2012 roku jeden z największych serwisów społecznościowych na których można umieszczać zdjęcia Pinterest
-        przeniósł swoje API oparte o Django na framework Flask. Serwis Pinterest jest w stanie obsłużyć ponad 10
-        miliardów żądań HTTP tylko z użyciem tego oprogramowania[21].</p>
+    <p>{% trans "In its basic version, it does not have as many functions as the previously described Django framework. It does not contain a layer responsible for communication with the database or validation of forms. All such functions are offered as extensions to its basic version. The extensions themselves are also developed by the community and people who are not directly in the team of programmers responsible for creating this software." %}</p>
 
-    <p>W swojej podstawowej wersji nie posiada on tylu funkcji co opisany wcześniej framework Django. Nie zawiera w
-        sobie warstwy odpowiedzialnej za komunikację z bazą danych lub walidację formularzy. Wszystkie tego typu funkcje
-        oferowane są jako rozszerzenia do jego podstawowej wersji. Same rozszerzenia są również rozwijane przez
-        społeczność oraz osoby nie będące bezpośrednio w zespole programistów odpowiedzialnych za tworzenie tego
-        oprogramowania.</p>
-
-    <p>Rozszerzenia zawierają między innymi:</p>
+    <p>{% trans "Extensions include, among others:" %}</p>
     <ul>
-        <li> ORM do komunikacji z bazą danych</li>
-        <li> Narzędzia wspierające wykonywanie migracji bazy danych</li>
-        <li> Narzędzia wspierające różne metody autentykacji</li>
-        <li> Walidację formularzy</li>
+        <li> {% trans "ORM to communicate with database" %}</li>
+        <li> {% trans "Tools for making database migrations" %}</li>
+        <li> {% trans "Tools supporting different authorization methods" %}</li>
+        <li> {% trans "Form validation" %}</li>
     </ul>
 
-    <p>Główną zaletą frameworka Flask jest jego duża dowolność w konfiguracji, co przekłada się na możliwość
-        dostosowywania
-        go do specyfiki problemu, który chcą rozwiązać programiści. Nie narzuca on korzystania ze specyficznych narzędzi
-        dostarczanych wraz z dystrybucją a poza zapewnieniem w podstawowej wersji najbardziej niezbędnych
-        funkcjonalności
-        jak renderowanie stron HTML czy routing adresów URL [22].</p>
+    <p>{% trans "The main advantage of the Flask framework is its great freedom in configuration, which translates into the ability to adapt it to the specificity of the problem that developers want to solve. It does not impose the use of specific tools provided with the distribution and apart from providing the basic version with the most necessary functionalities such as rendering HTML pages or routing URLs." %}</p>
 
-    <p>W swojej podstawowej wersji zawiera:</p>
+    <p>{% trans "In it's basic version includes:" %}</p>
 
     <ul>
-        <li> Serwer oraz debugger</li>
-        <li> Wsparcie dla testów jednostkowych</li>
-        <li> Język do generowania formularzy HTML Jinja2</li>
-        <li> Dyspozytor adresów URL</li>
+        <li>{% trans "Server and debugger" %}</li>
+        <li>{% trans "Support for unit tests" %}</li>
+        <li>{% trans "HTML templating language Jinja2" %}</li>
+        <li>{% trans "URL dispatcheer" %}</li>
     </ul>
-    <p>Przykładem tego jak niewiele kodu jest potrzebne do tego aby z użyciem tego oprogramowania stworzyć pełnoprawny
-        serwer internetowy zdolny do zwracania odpowiedzi HTTP po wskazaniu konkretnego adresu URL jest kod widoczny
-        ponizejna Rys 1.</p>
+    <p>{% trans "An example of how little code is needed to create a fully-fledged web server with the use of this software that is capable of returning HTTP responses after indicating a specific URL is the code shown below in Figure 1." %}</p>
 
     {% load static %}
     <div class="container">
             <img class="center" src="{% static 'images/flask-1.png' %}">
     </div>
-    <p class="text-center">Rys 1. Przykładowy serwer stworzony z użyciem Flask </p>
+    <p class="text-center">{% trans "Fig 1. Sample web server created with Flask." %} </p>
 
 </div>
 {% endblock %}

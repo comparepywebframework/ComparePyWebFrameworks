@@ -35,4 +35,6 @@ urlpatterns += i18n_patterns(
     path('flask_info/', views.flask_info, name="flask_info"),
     path('django_info/', views.django_info, name="django_info"),
     path('pyramid_info/', views.pyramid_info, name="pyramid_info"),
+    path('activate_pl_lang/', views.activate_pl_lang, name="activate_pl_lang"),
+    path('activate_en_lang/', views.activate_en_lang, name="activate_en_lang"),
 )

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-05 10:55+0200\n"
+"POT-Creation-Date: 2019-05-05 20:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,35 +20,33 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: templates/base.html:20
+#: templates/base.html:23
 msgid "ComparePyWebFrameworks"
 msgstr "PorównajFrameworkiWebPythona"
 
-#: templates/base.html:28
+#: templates/base.html:27
 msgid "Rendering Template"
 msgstr "Renderowanie szablonu"
 
-#: templates/base.html:29
+#: templates/base.html:28
 msgid "Inserting to database"
 msgstr "Wprowadzanie danych do bazy danych"
 
-#: templates/base.html:30 templates/external_api_call.html:10
+#: templates/base.html:29 templates/external_api_call.html:10
 msgid "External API Call"
 msgstr "Wywołanie zewnętrznego API"
 
-#: templates/base.html:31 templates/index.html:60
+#: templates/base.html:30 templates/index.html:60
 #: templates/serialize_json.html:10 templates/serialize_json.html:38
 msgid "Serialize JSON"
 msgstr "Serializacja JSON"
 
 #: templates/database_measurements_stats.html:6
-#: templates/external_api_call_measurements_stats.html:5
-#: templates/json_serialization_measurements_stats.html:5
+#: templates/external_api_call_measurements_stats.html:6
+#: templates/json_serialization_measurements_stats.html:6
 #: templates/rendering_template_measurements_stats.html:6
-#, fuzzy
-#| msgid "Total measurements:"
 msgid "Measurements"
-msgstr "Całkowita liczba pomiarów:"
+msgstr "Pomiary"
 
 #: templates/database_measurements_stats.html:12
 msgid "10 Records"
@@ -56,62 +54,56 @@ msgstr "10 rekordów"
 
 #: templates/database_measurements_stats.html:15
 #: templates/database_measurements_stats.html:82
-#: templates/database_measurements_stats.html:150
-#: templates/external_api_call_measurements_stats.html:10
-#: templates/json_serialization_measurements_stats.html:10
+#: templates/database_measurements_stats.html:148
+#: templates/external_api_call_measurements_stats.html:12
+#: templates/json_serialization_measurements_stats.html:12
 #: templates/rendering_template_measurements_stats.html:15
-#: templates/rendering_template_measurements_stats.html:82
-#: templates/rendering_template_measurements_stats.html:149
-#, fuzzy
-#| msgid "Total measurements:"
+#: templates/rendering_template_measurements_stats.html:83
+#: templates/rendering_template_measurements_stats.html:150
 msgid "Last measurement Flask"
 msgstr "Całkowita liczba pomiarów:"
 
 #: templates/database_measurements_stats.html:22
 #: templates/database_measurements_stats.html:89
-#: templates/database_measurements_stats.html:157
-#: templates/external_api_call_measurements_stats.html:16
-#: templates/json_serialization_measurements_stats.html:16
+#: templates/database_measurements_stats.html:155
+#: templates/external_api_call_measurements_stats.html:18
+#: templates/json_serialization_measurements_stats.html:18
 #: templates/rendering_template_measurements_stats.html:22
-#: templates/rendering_template_measurements_stats.html:89
-#: templates/rendering_template_measurements_stats.html:156
-#, fuzzy
-#| msgid "Total measurements:"
+#: templates/rendering_template_measurements_stats.html:90
+#: templates/rendering_template_measurements_stats.html:157
 msgid "Last measurement Django"
 msgstr "Całkowita liczba pomiarów:"
 
 #: templates/database_measurements_stats.html:29
 #: templates/database_measurements_stats.html:96
-#: templates/database_measurements_stats.html:164
-#: templates/external_api_call_measurements_stats.html:22
-#: templates/json_serialization_measurements_stats.html:22
+#: templates/database_measurements_stats.html:162
+#: templates/external_api_call_measurements_stats.html:24
+#: templates/json_serialization_measurements_stats.html:24
 #: templates/rendering_template_measurements_stats.html:29
-#: templates/rendering_template_measurements_stats.html:96
-#: templates/rendering_template_measurements_stats.html:163
-#, fuzzy
-#| msgid "Total measurements:"
+#: templates/rendering_template_measurements_stats.html:97
+#: templates/rendering_template_measurements_stats.html:164
 msgid "Last measurement Pyramid"
 msgstr "Całkowita liczba pomiarów:"
 
 #: templates/database_measurements_stats.html:36
 #: templates/database_measurements_stats.html:103
-#: templates/database_measurements_stats.html:171
-#: templates/external_api_call_measurements_stats.html:28
-#: templates/json_serialization_measurements_stats.html:28
+#: templates/database_measurements_stats.html:169
+#: templates/external_api_call_measurements_stats.html:30
+#: templates/json_serialization_measurements_stats.html:30
 #: templates/rendering_template_measurements_stats.html:36
-#: templates/rendering_template_measurements_stats.html:103
-#: templates/rendering_template_measurements_stats.html:170
+#: templates/rendering_template_measurements_stats.html:104
+#: templates/rendering_template_measurements_stats.html:171
 msgid "Total measurements:"
 msgstr "Całkowita liczba pomiarów:"
 
 #: templates/database_measurements_stats.html:42
 #: templates/database_measurements_stats.html:109
-#: templates/database_measurements_stats.html:177
+#: templates/database_measurements_stats.html:175
+#: templates/external_api_call_measurements_stats.html:36
+#: templates/json_serialization_measurements_stats.html:36
 #: templates/rendering_template_measurements_stats.html:42
-#: templates/rendering_template_measurements_stats.html:109
-#: templates/rendering_template_measurements_stats.html:176
-#, fuzzy
-#| msgid "Average Time:"
+#: templates/rendering_template_measurements_stats.html:110
+#: templates/rendering_template_measurements_stats.html:177
 msgid "Average Time"
 msgstr "Średni czas"
 
@@ -119,9 +111,129 @@ msgstr "Średni czas"
 msgid "50 Records"
 msgstr "50 Rekordów"
 
-#: templates/database_measurements_stats.html:147
+#: templates/database_measurements_stats.html:145
 msgid "100 Records"
 msgstr "100 Rekordów"
+
+#: templates/django.html:17
+msgid ""
+"Django is a free open source framework designed to create complex websites. "
+"The Django Software Foundation is responsible for its development. It was "
+"founded in 2005 and since then its popularity has been constantly growing. "
+"It is widely used on the market in such organizations as Mozilla, Instagram, "
+"Bitubcket."
+msgstr ""
+"Django jest to darmowy otwarto źródłowy framework przeznaczony do tworzenia "
+"złożonych serwisów internetowych. Za jego rozwój odpowiedzialna jest "
+"organizacja non-profit Django Software Foundation powstał on w 2005 roku i "
+"od tamtej pory jego popularność ciągle rośnie. Jest szeroko używany na rynku "
+"w takich organizacjach jak Mozilla, Instagram, Bitubcket."
+
+#: templates/django.html:19
+msgid ""
+"The main goal of Django is to simplify the creation of complex applications "
+"that require the use of a database. Provided with many reusable components "
+"that are useful when creating applications such as the database "
+"administrator panel, which simplifies the process of software development."
+msgstr ""
+"Głównym celem Django jest uproszczenie tworzenia złożonych aplikacji "
+"wymagających użycia bazy danych. Dostarcza on wielu reużywalnych "
+"komponentów, które przydają się przy tworzeniu takich aplikacji jak na "
+"przykład panel adminsitratora bazy danych, który upraszcza proces tworzenia "
+"oprogramowania."
+
+#: templates/django.html:21
+msgid ""
+"Django supports the MVC Model - View - Kontroller architecture The model is "
+"responsible for the ORM (Object Relational Mapper) which is a bridge between "
+"data models written using Python and a relational database. Behind the view "
+"is the system associated with the processing of HTTP requests and the "
+"template generation system. The controller in the case of Django is a URL "
+"dispatcher, which controls the display of appropriate templates based on the "
+"given URL."
+msgstr ""
+"Django wspiera architekturę MVC Model – Widok – Kontroller (ang. Model – "
+"View – Controller) Za model odpowiedzialny jest ORM (ang. Object Relational "
+"Mapper) który stanowi pomost pomiędzy modelami danych napisanymi z użyciem "
+"języka Python a relacyjną bazą danych. Za widok odpowiada system związany z "
+"przetwarzaniem żądań HTTP oraz system generowania szablonów. Kontrolerem zaś "
+"w przypadku Django jest dyspozytor URL (ang. URL Dispatcher), który steruje "
+"wyświetlaniem odpowiednich szablonów na podstawie podanego adresu URL."
+
+#: templates/django.html:23
+msgid "Django also includes:"
+msgstr "W skład Django wchodzi również:"
+
+#: templates/django.html:26
+msgid "Server for debugging and testing"
+msgstr "Serwer służący do debugowania i testowania"
+
+#: templates/django.html:27
+msgid ""
+"A template generation system that has some of the concepts related to object-"
+"oriented programming like inheritance."
+msgstr ""
+"System generowania szablonów, który posiada w sobie część koncepcji "
+"związanych z programowaniem obiektowym jak dziedziczenie."
+
+#: templates/django.html:28
+msgid "A system for serializing objects to JSON objects"
+msgstr "System do serializacji obiektów do postacji obiektów JSON"
+
+#: templates/django.html:29
+msgid ""
+"A system supporting the creation of applications translated into different "
+"languages"
+msgstr "System wspomagający tworzenie aplikacji tłumaczonych na różne języki"
+
+#: templates/django.html:30
+msgid "Interface for unit tests"
+msgstr "Interfejs do tworzenia testów jednostkowych"
+
+#: templates/django.html:33
+msgid "The most important functions included in the basic distribution:"
+msgstr "Najważniejsze funkcje zawarte w podstawowej dystrybucji:"
+
+#: templates/django.html:35
+msgid "User authorization system"
+msgstr "System autentykacji użytkowników"
+
+#: templates/django.html:36
+msgid "The database administrator panel visible in Figure 1."
+msgstr "Panel adminstratora bazy danych widoczny na Rys 1."
+
+#: templates/django.html:37
+msgid ""
+"Built-in security for the most popular attacks like SQL injection and "
+"password cracking."
+msgstr ""
+"Wbudowane zabezpieczenia dla najbardziej popularnych ataków jak "
+"wstrzykiwanie SQL czy łamanie haseł."
+
+#: templates/django.html:44
+msgid ""
+"Fig.1 Django administrator panel, facilitating the management of the "
+"database."
+msgstr ""
+"Rys.1 Panel administratora Django, ułatwiający zarządzanie bazą danych."
+
+#: templates/django.html:46
+msgid ""
+"The biggest advantage affecting the popularity of this framework is a large "
+"community focused around it which leads to the creation of extensive "
+"documentation and many guides. Also the most common problems related to the "
+"use of this framework have been very well explained on the internet. There "
+"are also annual conferences for programmers, such as DjangoCon, where there "
+"is an exchange of knowledge between people who create the framework and its "
+"users."
+msgstr ""
+"Największą zaletą wpływająca na popularność tego frameworka jest duża "
+"społeczność skupiona wokół niego co prowadzi do tworzenia rozbudowanej "
+"dokumentacji oraz wielu poradników. Również najpowszechniej występujące "
+"problemy związane z użytkowaniem tego frameworka zostały bardzo dobrze "
+"wyjaśnione w internecie. Organizowane są również coroczne konfernecje dla "
+"programistów jak na przykład DjangoCon na których następuje wymiana wiedzy "
+"pomiędzy osobami zarówno tworzącymi sam framework jak jego użytkownikami."
 
 #: templates/external_api_call.html:14
 msgid ""
@@ -135,22 +247,126 @@ msgstr ""
 msgid "Make Request"
 msgstr "Wyślij żądanie"
 
-#: templates/external_api_call_measurements_stats.html:30
-#: templates/json_serialization_measurements_stats.html:30
-msgid "Average Time:"
-msgstr "Średni czas"
+#: templates/flask.html:17
+msgid ""
+"Flask is a free open source micro-framework created in 2004. Flask is "
+"classified as micro-framework, it doesn't need any special tools or "
+"libraries to launch."
+msgstr ""
+"Flask jest to darmowy otwarto źródłowy mikro-framework powstały w 2004 roku. "
+"Flask jest klasyfikowany jako mikro-framework z uwagi na to, że do "
+"uruchomienia nie wymaga żadnych specjalnych narzędzi ani bibliotek."
+
+#: templates/flask.html:19
+msgid ""
+"In 2012 one of the biggest social networks for posting pictures Pinterest "
+"moved it's API which was originally based on Django to Flask. Pinterest can "
+"manage to serve over 10 billions HTTP requests per day only with this "
+"software."
+msgstr ""
+"W 2012 roku jeden z największych serwisów społecznościowych na których można "
+"umieszczać zdjęcia Pinterest przeniósł swoje API oparte o Django na "
+"framework Flask. Serwis Pinterest jest w stanie obsłużyć ponad 10 miliardów "
+"żądań HTTP tylko z użyciem tego oprogramowania."
+
+#: templates/flask.html:21
+msgid ""
+"In its basic version, it does not have as many functions as the previously "
+"described Django framework. It does not contain a layer responsible for "
+"communication with the database or validation of forms. All such functions "
+"are offered as extensions to its basic version. The extensions themselves "
+"are also developed by the community and people who are not directly in the "
+"team of programmers responsible for creating this software."
+msgstr ""
+"W swojej podstawowej wersji nie posiada on tylu funkcji co opisany wcześniej "
+"framework Django. Nie zawiera w sobie warstwy odpowiedzialnej za komunikację "
+"z bazą danych lub walidację formularzy. Wszystkie tego typu funkcje "
+"oferowane są jako rozszerzenia do jego podstawowej wersji. Same rozszerzenia "
+"są również rozwijane przez społeczność oraz osoby nie będące bezpośrednio w "
+"zespole programistów odpowiedzialnych za tworzenie tego oprogramowania."
+
+#: templates/flask.html:23
+msgid "Extensions include, among others:"
+msgstr "Rozszerzenia zawierają między innymi:"
+
+#: templates/flask.html:25
+msgid "ORM to communicate with database"
+msgstr "ORM do komunikacji z bazą danych"
+
+#: templates/flask.html:26
+msgid "Tools for making database migrations"
+msgstr "Narzędzia wspierające wykonywanie migracji bazy danych"
+
+#: templates/flask.html:27
+msgid "Tools supporting different authorization methods"
+msgstr "Narzędzia wspierające różne metody autentykacji"
+
+#: templates/flask.html:28
+msgid "Form validation"
+msgstr "Walidację formularzy"
+
+#: templates/flask.html:31
+msgid ""
+"The main advantage of the Flask framework is its great freedom in "
+"configuration, which translates into the ability to adapt it to the "
+"specificity of the problem that developers want to solve. It does not impose "
+"the use of specific tools provided with the distribution and apart from "
+"providing the basic version with the most necessary functionalities such as "
+"rendering HTML pages or routing URLs."
+msgstr ""
+"Główną zaletą frameworka Flask jest jego duża dowolność w konfiguracji, co "
+"przekłada się na możliwość dostosowywania go do specyfiki problemu, który "
+"chcą rozwiązać programiści. Nie narzuca on korzystania ze specyficznych "
+"narzędzi dostarczanych wraz z dystrybucją a poza zapewnieniem w podstawowej "
+"wersji najbardziej niezbędnych funkcjonalności jak renderowanie stron HTML "
+"czy routing adresów URL."
+
+#: templates/flask.html:33
+msgid "In it's basic version includes:"
+msgstr "W swojej podstawowej wersji zawiera:"
+
+#: templates/flask.html:36
+msgid "Server and debugger"
+msgstr "Serwer oraz debugger"
+
+#: templates/flask.html:37
+msgid "Support for unit tests"
+msgstr "Wsparcie dla testów jednostkowych"
+
+#: templates/flask.html:38
+msgid "HTML templating language Jinja2"
+msgstr "Język do generowania formularzy HTML Jinja2"
+
+#: templates/flask.html:39
+msgid "URL dispatcheer"
+msgstr "Dyspozytor URL"
+
+#: templates/flask.html:41
+msgid ""
+"An example of how little code is needed to create a fully-fledged web server "
+"with the use of this software that is capable of returning HTTP responses "
+"after indicating a specific URL is the code shown below in Figure 1."
+msgstr ""
+"Przykładem tego jak niewiele kodu jest potrzebne do tego aby z użyciem tego "
+"oprogramowania stworzyć pełnoprawny serwer internetowy zdolny do zwracania "
+"odpowiedzi HTTP po wskazaniu konkretnego adresu URL jest kod widoczny "
+"poniżej na Rys 1."
+
+#: templates/flask.html:47
+msgid "Fig 1. Sample web server created with Flask."
+msgstr "Rys 1. Przykładowy serwer stworzony z użyciem Flask"
 
 #: templates/index.html:6
-#, fuzzy
-#| msgid "ComparePyWebFrameworks"
 msgid "Benchmark Python Web Frameworks"
-msgstr "PorównajWebFrameworkiPythona"
+msgstr "Porównaj Frameworki Web dla języka Python"
 
 #: templates/index.html:8
 msgid ""
 "On this website you can compare 3 most popular python web frameworks in "
 "following tests."
-msgstr "Na tej stronie możesz porównać 3 najpopularniesznie frameworki web dla języka python w następujących testach."
+msgstr ""
+"Na tej stronie możesz porównać 3 najpopularniesznie frameworki web dla "
+"języka python w następujących testach."
 
 #: templates/index.html:18 templates/rendering_template.html:11
 msgid "Rendering HTML template"
@@ -158,11 +374,9 @@ msgstr "Renderowanie szablonu HTML"
 
 #: templates/index.html:20
 msgid "Render same text in HTML template 100, 1000 or 10000 times."
-msgstr "Wyrenderuj ten sam tekst w szablonie HTML 100, 1000 lub 10000 razy"
+msgstr "Wyrenderuj ten sam tekst w szablonie HTML 100, 1000 lub 10000 razy."
 
 #: templates/index.html:33
-#, fuzzy
-#| msgid "Inserting to database"
 msgid "Insert data to database"
 msgstr "Wprowadzanie danych do bazy danych"
 
@@ -170,35 +384,29 @@ msgstr "Wprowadzanie danych do bazy danych"
 msgid ""
 "Insert sample data to database with each framework's ORM for 10, 50 or 100 "
 "records."
-msgstr "Wprowadź testowe dane do bazy danych z użyciem ORM danego frameworka dla 10, 50 lub 100 rekordów"
+msgstr ""
+"Wprowadź testowe dane do bazy danych z użyciem ORM danego frameworka dla 10, "
+"50 lub 100 rekordów."
 
 #: templates/index.html:47
-#, fuzzy
-#| msgid "External API Call"
 msgid "External API call"
 msgstr "Wywołanie zewnętrznego API"
 
 #: templates/index.html:48
-#, fuzzy
-#| msgid ""
-#| "Make request to external API (https://openweathermap.org) to get weather "
-#| "forecast for Katowice and return response"
 msgid "Make request to OpenWeather API to collect data and return as response."
 msgstr ""
 "Wyślij żądanie do zewnętrznego API (https://openweathermap.org) w celu "
-"pobrania prognozy pogody dla Katowic i zwróć jako odpowiedź"
+"pobrania prognozy pogody dla Katowic i zwróć jako odpowiedź."
 
 #: templates/index.html:61
-#, fuzzy
-#| msgid "Serialize sample JSON object and return as response"
 msgid "Collect object from database and return as JSON response."
-msgstr "Serializuj przykładowy obiekt JSON i zwróć jako odpowiedź"
+msgstr "Serializuj przykładowy obiekt JSON i zwróć jako odpowiedź."
 
 #: templates/index.html:75
 msgid "Flask is a free open-source micro-framework created in 2004."
 msgstr ""
 "Flask jest darmowym otwarto źródłowym mikro-frameworkiem stworzonym w 2004 "
-"roku"
+"roku."
 
 #: templates/index.html:76 templates/index.html:90 templates/index.html:105
 msgid "Learn more"
@@ -210,13 +418,13 @@ msgid ""
 "created in 2005."
 msgstr ""
 "Django jest darmowym otwarto źródłowym frameworkiem przeznaczonym do "
-"tworzenia złozonych serwisów internetowych stworzonym w 2005 roku"
+"tworzenia złozonych serwisów internetowych stworzonym w 2005 roku."
 
 #: templates/index.html:104
 msgid "Pyramid is a free open-source micro-framework created in 2008. "
 msgstr ""
 "Pyramid jest darmowym otwarto źródłowym mikro-frameworkiem stworzonym w 2008 "
-"roku"
+"roku."
 
 #: templates/inserting_to_database.html:11
 msgid "Inserting objects to database"
@@ -224,7 +432,7 @@ msgstr "Wprowadzanie obiektów do bazy danych"
 
 #: templates/inserting_to_database.html:17 templates/serialize_json.html:15
 msgid "Sample Object:"
-msgstr "Przykładowy obiekt"
+msgstr "Przykładowy obiekt:"
 
 #: templates/inserting_to_database.html:44 templates/rendering_template.html:18
 msgid "How many times?"
@@ -233,6 +441,45 @@ msgstr "Ile razy?"
 #: templates/inserting_to_database.html:51
 msgid "Insert"
 msgstr "Wprowadź"
+
+#: templates/pyramid.html:17
+msgid ""
+"Pyramid is a free opensource micro-framework created in 2008. Developers who "
+"worked on this software were inspired by Django web framework."
+msgstr ""
+"Pyramid jest to darmowy otwartoźródłowy mikro-framework stworzony w 2008 "
+"roku. Programiści pracujący nad produkcją tego oprogramowania inspirowali "
+"się Django."
+
+#: templates/pyramid.html:19
+msgid ""
+"In basic version it provides only basic functionalitites similar to Flask. "
+"It can communicate with relational databases using SQLAlchemy or with NoSQL "
+"databases for instance InfluxDB or CouchDB"
+msgstr ""
+"W swojej podstawowej wersji podobnie jak Flask udostępnia jedynie "
+"najważniejsze funkcjonalności. Może onkomunikować się z relacyjnymi bazami "
+"danych za pomocą SQLAlchemy lub z bazami NoSQL jak na przykład InfluxDB lub "
+"CouchDB"
+
+#: templates/pyramid.html:21
+msgid "Like flask it has support for extensions made by community."
+msgstr ""
+"Podobnie jak Flask posiada on wsparcie dla rozszerzeń tworzonych przez "
+"społeczność."
+
+#: templates/pyramid.html:23
+msgid ""
+"Basic view which is full HTTP server returning valid response when request "
+"is sent to desirable address can be seen on Fig 1."
+msgstr ""
+"Podstawowy widok będący pełnoprawnym serwerem HTTP zwracającym poprawną "
+"odpowiedź regując na żądanie wysłane pod wskazany adres widoczne jest na Rys "
+"1."
+
+#: templates/pyramid.html:29
+msgid "Fig 1. Basic web server created with Pyramid"
+msgstr "Rys 1. Przykładowy serwer stworzony z użyciem Pyramid"
 
 #: templates/rendering_template.html:15
 msgid "Rendering same paragraph specified number of times"
@@ -250,14 +497,17 @@ msgstr "Renderuj"
 msgid "100 elements"
 msgstr "100 elementów"
 
-#: templates/rendering_template_measurements_stats.html:79
+#: templates/rendering_template_measurements_stats.html:80
 msgid "1000 elements"
 msgstr "1000 elementów"
 
-#: templates/rendering_template_measurements_stats.html:146
+#: templates/rendering_template_measurements_stats.html:147
 msgid "10000 elements"
 msgstr "10000 elementów"
 
 #: templates/serialize_json.html:14
 msgid "Serialize sample JSON object and return as response"
 msgstr "Serializuj przykładowy obiekt JSON i zwróć jako odpowiedź"
+
+#~ msgid "Django website"
+#~ msgstr "Strona Django"

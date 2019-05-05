@@ -5,24 +5,27 @@
     <hr class="featurette-divider">
 </div>
 <div class="container">
-    <h1 class="page-title">Pyramid</h1>
+    <h1 class="page-title">{% block title %}Pyramid{% endblock %}</h1>
 </div>
 <div class="container">
     <hr class="featurette-divider">
 </div>
 <div class="container">
-    <p>{% trans "Pyramid jest to darmowy otwartoźródłowy mikro-framework stworzony w 2008 roku. Programiści pracujący nad produkcją tego oprogramowania inspirowali się Django." %}</p>
+        <h2><a href="https://trypyramid.com" class="badge badge-info">trypyramid.com</a><h2>
+</div>
+<div class="container">
+    <p>{% trans "Pyramid is a free opensource micro-framework created in 2008. Developers who worked on this software were inspired by Django web framework." %}</p>
 
-    <p>{% trans "W swojej podstawowej wersji podobnie jak Flask udostępnia jedynie najważniejsze funkcjonalności. Może onkomunikować się z relacyjnymi bazami danych za pomocą SQLAlchemy lub z bazami NoSQL jak na przykład InfluxDB lub CouchDB" %}</p>
+    <p>{% trans "In basic version it provides only basic functionalitites similar to Flask. It can communicate with relational databases using SQLAlchemy or with NoSQL databases for instance InfluxDB or CouchDB" %}</p>
 
-    <p>{% trans "Podobnie jak Flask posiada on wsparcie dla rozszerzeń tworzonych przez społeczność." %}</p>
+    <p>{% trans "Like flask it has support for extensions made by community." %}</p>
 
-    <p>{% trans "Podstawowy widok będący pełnoprawnym serwerem HTTP zwracającym poprawną odpowiedź regując na żądanie wysłane pod wskazany adres widoczne jest na Rys 1." %}</p>
+    <p>{% trans "Basic view which is full HTTP server returning valid response when request is sent to desirable address can be seen on Fig 1." %}</p>
 
     {% load static %}
     <div class="container">
         <img class="center" src="{% static 'images/pyramid-1.png' %}">
     </div>
-    <p class="text-center">{% trans "Rys 1. Przykładowy serwer stworzony z użyciem Pyramid" %}</p>
+    <p class="text-center">{% trans "Fig 1. Basic web server created with Pyramid" %}</p>
 </div>
 {% endblock %}

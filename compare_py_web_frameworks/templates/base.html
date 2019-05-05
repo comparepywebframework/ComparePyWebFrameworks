@@ -15,13 +15,12 @@
     <!-- CSS -->
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>
+            {% block title %}{% endblock %}
+    </title>
 </head>
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="{% url 'index' %}"><i class="fas fa-balance-scale"></i> {% trans "ComparePyWebFrameworks" %}</a> 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
@@ -29,6 +28,11 @@
             <a class="nav-item nav-link" href="{% url 'inserting_to_database' %}">{% trans "Inserting to database" %}</a>
             <a class="nav-item nav-link" href="{% url 'external_api_call' %}">{% trans "External API Call" %}</a>
             <a class="nav-item nav-link" href="{% url 'serialize_json' %}">{% trans "Serialize JSON" %}</a>
+            <div class="vl"></div>
+            {% load static %}
+            <a class="nav-item nav-link" href="{% url 'activate_pl_lang' %}"><img class="navbar-flag" src="{% static 'images/poland.svg' %}"></a>
+            {% load static %}
+            <a class="nav-item nav-link" href="{% url 'activate_en_lang' %}"><img class="navbar-flag" src="{% static 'images/united-states.svg' %}"></a>
         </div>
     </div>
 </nav>
@@ -39,6 +43,7 @@
     </div>
 </body>
 <!-- Footer -->
+
 <footer class="page-footer font-small">
 
         <!-- Copyright -->
@@ -49,3 +54,4 @@
       </footer>
       <!-- Footer -->
 </html>
+
