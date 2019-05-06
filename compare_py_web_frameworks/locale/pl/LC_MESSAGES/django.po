@@ -61,7 +61,7 @@ msgstr "10 rekordów"
 #: templates/rendering_template_measurements_stats.html:83
 #: templates/rendering_template_measurements_stats.html:150
 msgid "Last measurement Flask"
-msgstr "Całkowita liczba pomiarów:"
+msgstr "Ostatni pomiar Flask"
 
 #: templates/database_measurements_stats.html:22
 #: templates/database_measurements_stats.html:89
@@ -72,7 +72,7 @@ msgstr "Całkowita liczba pomiarów:"
 #: templates/rendering_template_measurements_stats.html:90
 #: templates/rendering_template_measurements_stats.html:157
 msgid "Last measurement Django"
-msgstr "Całkowita liczba pomiarów:"
+msgstr "Ostatni pomiar Django"
 
 #: templates/database_measurements_stats.html:29
 #: templates/database_measurements_stats.html:96
