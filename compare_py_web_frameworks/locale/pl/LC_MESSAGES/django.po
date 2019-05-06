@@ -3,9 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
-msgid ""
-msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-05 20:30+0200\n"
@@ -508,6 +505,3 @@ msgstr "10000 elementów"
 #: templates/serialize_json.html:14
 msgid "Serialize sample JSON object and return as response"
 msgstr "Serializuj przykładowy obiekt JSON i zwróć jako odpowiedź"
-
-#~ msgid "Django website"
-#~ msgstr "Strona Django"
