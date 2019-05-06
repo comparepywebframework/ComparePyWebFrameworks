@@ -83,7 +83,7 @@ msgstr "Ostatni pomiar Django"
 #: templates/rendering_template_measurements_stats.html:97
 #: templates/rendering_template_measurements_stats.html:164
 msgid "Last measurement Pyramid"
-msgstr "Całkowita liczba pomiarów:"
+msgstr "Ostatni pomiar Pyramid"
 
 #: templates/database_measurements_stats.html:36
 #: templates/database_measurements_stats.html:103
