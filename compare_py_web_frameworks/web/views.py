@@ -9,6 +9,7 @@ from .helpers import (
     measure_inserting_to_database,
     measure_external_api_call,
     measure_json_serialization,
+    get_previous_url_route,
 )
 from .measurements import (
     record_rendering_template_time,
@@ -40,13 +41,19 @@ def pyramid_info(request):
 
 
 def activate_pl_lang(request):
+    previous_url = request.META.get("HTTP_REFERER")
+    print(previous_url)
+    current_route = get_previous_url_route(previous_url, lang="en")
     activate("pl")
-    return redirect("index")
+    return redirect(current_route)
 
 
 def activate_en_lang(request):
+    previous_url = request.META.get("HTTP_REFERER")
+    print(previous_url)
+    current_route = get_previous_url_route(previous_url, lang="pl")
     activate("en")
-    return redirect("index")
+    return redirect(current_route)
 
 
 def rendering_template(request):

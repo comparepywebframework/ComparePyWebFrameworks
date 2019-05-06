@@ -3,6 +3,7 @@ import requests
 from .measurements import record_external_api_call_time, record_json_serialization_time
 from .measurement_helpers import measure_execution_time
 import logging
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -72,4 +73,11 @@ def measure_json_serialization(framework):
     except Exception as e:
         logger.error(f"JSON Serialization connection error - {framework} - {e}")
         return False
+
+
+def get_previous_url_route(previous_url, lang):
+    """Returns previous url route visted by user for given language"""
+    pattern = re.compile(f"(?<={lang}\/)\w*")
+    match = re.findall(pattern, previous_url)
+    return match[0]
 
