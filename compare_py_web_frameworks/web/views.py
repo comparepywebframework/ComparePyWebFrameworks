@@ -44,6 +44,8 @@ def activate_pl_lang(request):
     previous_url = request.META.get("HTTP_REFERER")
     print(previous_url)
     current_route = get_previous_url_route(previous_url, lang="en")
+    if current_route is None:
+        return redirect(previous_url)
     activate("pl")
     return redirect(current_route)
 
@@ -52,6 +54,8 @@ def activate_en_lang(request):
     previous_url = request.META.get("HTTP_REFERER")
     print(previous_url)
     current_route = get_previous_url_route(previous_url, lang="pl")
+    if current_route is None:
+        return redirect(previous_url)
     activate("en")
     return redirect(current_route)
 

@@ -79,5 +79,7 @@ def get_previous_url_route(previous_url, lang):
     """Returns previous url route visted by user for given language"""
     pattern = re.compile(f"(?<={lang}\/)\w*")
     match = re.findall(pattern, previous_url)
+    if not match:
+        return None
     return match[0]
 
