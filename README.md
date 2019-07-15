@@ -1,36 +1,26 @@
-# ComparePyWebFrameworks 
+# ComparePyWebFrameworks
 
-## Uruchomienie
+## System Architecture
+![System architecture](https://i.ibb.co/V9fGG1v/Untitled-Diagram.png)
 
-### Wersja produkcyjna
+## Main screen
+![Main screen](https://i.ibb.co/mC7w9Jt/Screenshot-from-2019-07-15-08-24-24.png)
 
-`docker-compose up -d mysql`  
-`docker-compose up -d server`
+## Launching 
+
+### Production
+
+`python start.py`  
 
 ### Development
 
-1. Klonujemy repozytorium
-2. Tworzymy python virtual enviroment  
+1. Clone repo
+2. Create python virtual environment
    `python -m venv venv`
-3. Aktywujemy venv  
+3. Activate venv  
    `source venv/bin/activate`
-4. Instalujemy zaleznosci  
+4. Install dependencies  
    `pip install -r requirements.txt`
 
-Uruchamiamy baze danych MySQL  
-`docker-compose up -d mysql`
-
-Migracje bazy danych  
-`python manage.py migrate`
-
-Załadowanie testowych danych  
-`db_fixtures.json` - plik z testowymi danymi gotowymi do załadowania  
-`python manage.py loaddata db_fixtures.json`  
-
-Uruchomienie serwera  
+Launching Django server 
 `python manage.py runserver 0.0.0.0:8000`
-
-Panel administratora do bazy danych
-`http://localhost:8000/admin`
-Login: `admin`
-Hasło: `adminadmin`
